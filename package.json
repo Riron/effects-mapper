@@ -1,0 +1,16 @@
+{
+  "name": "test-ast",
+  "version": "1.0.0",
+  "description": "",
+  "main": "parser.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "parse": "./node_modules/.bin/tsc parser.ts --m commonjs && node parser.js file.ts",
+    "print": "./node_modules/.bin/tsc print.ts --m commonjs && node print.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@ngrx/store": "^4.1.1"
+  }
+}

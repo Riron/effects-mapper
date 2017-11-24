@@ -1,0 +1,39 @@
+[
+    {
+        "name": "eventModification$",
+        "returnType": [
+            "void"
+        ],
+        "inputTypes": [
+            "CreateEvent",
+            "EditEvent"
+        ]
+    },
+    {
+        "name": "fetchEvents$",
+        "returnType": [
+            "FetchEvent"
+        ],
+        "inputTypes": [
+            "FetchEvents"
+        ]
+    },
+    {
+        "name": "fetchEvent$",
+        "returnType": [
+            "CreateEvent"
+        ],
+        "inputTypes": [
+            "FetchEvent"
+        ]
+    },
+    {
+        "name": "fetchEvent2$",
+        "returnType": [
+            "EditEvent"
+        ],
+        "inputTypes": [
+            "FetchEvent"
+        ]
+    }
+]
