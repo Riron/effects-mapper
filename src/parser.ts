@@ -1,59 +1,57 @@
 import * as ts from 'typescript';
-import * as fs from 'fs';
-
-interface DocEntry {
-  name?: string;
-  fileName?: string;
-  documentation?: string;
-  type?: string;
-  constructors?: DocEntry[];
-  parameters?: DocEntry[];
-  returnType?: string;
-}
+import { writeFileSync } from 'fs';
 
 interface DecoratorEvaluation {
   expression: string;
-  arguments: {name: string, value: any}[];
+  arguments: { name: string; value: any }[];
 }
 
 export interface Mapping {
   name: string;
   inputTypes: string[];
   returnType: string[];
+  fileInfo: string;
 }
 
-function generateEffectsMapping(
-  fileNames: string[],
-  options: ts.CompilerOptions
-): void {
+export function printEffectsMapping(fileNames: string[]): void {
+  const output = generateEffectsMapping(fileNames);
+  // print out the doc
+  writeFileSync('mapping.json', JSON.stringify(output, undefined, 4));
+}
+
+export function generateEffectsMapping(fileNames: string[]): Mapping[] {
   // Build a program using the set of root file names in fileNames
-  const program = ts.createProgram(fileNames, options);
+  const program = ts.createProgram(fileNames, {
+    target: ts.ScriptTarget.ES5,
+    module: ts.ModuleKind.CommonJS
+  });
 
   // Get the checker, we will use it to find more about classes
   const checker = program.getTypeChecker();
 
-  const output: any = [];
+  const output: Mapping[] = [];
 
   // Visit every sourceFile in the program
   for (const sourceFile of program.getSourceFiles()) {
     if (!sourceFile.isDeclarationFile) {
       // Walk the tree to search for classes
-      ts.forEachChild(sourceFile, visit);
+      ts.forEachChild(sourceFile, node => visit(node, sourceFile));
     }
   }
 
-  // print out the doc
-  fs.writeFileSync('mapping.json', JSON.stringify(output, undefined, 4));
+  return output;
 
-  return;
-
-  /** visit nodes finding exported classes */
-  function visit(node: ts.Node) {
+  function visit(node: ts.Node, sourceFile: ts.SourceFile) {
     const nodeDecoratorEvaluation = evaluateNode(node);
 
-    if (ts.isPropertyDeclaration(node) && isDecoratedWithEffect(nodeDecoratorEvaluation)) {
+    if (
+      ts.isPropertyDeclaration(node) &&
+      isDecoratedWithEffect(nodeDecoratorEvaluation)
+    ) {
       const symbol = checker.getSymbolAtLocation(node.name);
       const name = symbol!.getName();
+
+      const { fileInfo } = report(node, sourceFile);
 
       const returnType = getSymbolType(nodeDecoratorEvaluation, symbol!);
 
@@ -61,14 +59,25 @@ function generateEffectsMapping(
         .split('|')
         .map(s => s.trim());
 
-      output.push({ name, returnType, inputTypes });
-      console.log({ name, returnType, inputTypes });
+      output.push({ name, returnType, inputTypes, fileInfo });
     }
 
-    ts.forEachChild(node, visit);
+    ts.forEachChild(node, node => visit(node, sourceFile));
   }
 
-  function getSymbolType(nodeDecoratorEvaluation: DecoratorEvaluation[], symbol: ts.Symbol) {
+  function report(node: ts.Node, sourceFile: ts.SourceFile) {
+    let { line, character } = sourceFile.getLineAndCharacterOfPosition(
+      node.getStart()
+    );
+    return {
+      fileInfo: `${sourceFile.fileName} (${line + 1},${character + 1})`
+    };
+  }
+
+  function getSymbolType(
+    nodeDecoratorEvaluation: DecoratorEvaluation[],
+    symbol: ts.Symbol
+  ) {
     if (isEffectDecoratorWithoutDispatch(nodeDecoratorEvaluation)) {
       return ['void'];
     }
@@ -78,14 +87,14 @@ function generateEffectsMapping(
       symbol.valueDeclaration!
     );
 
+    // Is generic ?
     const genericType = type as ts.GenericType;
     if (genericType.typeArguments && genericType.typeArguments.length) {
       return genericType.typeArguments.map(t => checker.typeToString(t));
     }
 
-    return checker.typeToString(
-      checker.getTypeOfSymbolAtLocation(symbol, symbol.valueDeclaration!)
-    );
+    // If not, weird but still return type
+    return [checker.typeToString(type)];
   }
 
   function getOfType(node: ts.PropertyDeclaration) {
@@ -93,7 +102,7 @@ function generateEffectsMapping(
       return '';
     }
 
-    // Foireux ! todo sur des vrais méthodes & approfondir
+    // TODO Look at when no typings info is specified
     // this.action$.ofType<TYPE>...
     return node.initializer
       .getChildAt(0)
@@ -102,12 +111,21 @@ function generateEffectsMapping(
       .getText();
   }
 
-  function isDecoratedWithEffect(nodeDecoratorEvaluation: DecoratorEvaluation[]): boolean {
-    return nodeDecoratorEvaluation && nodeDecoratorEvaluation.some(e => e.expression === 'Effect');
+  function isDecoratedWithEffect(
+    nodeDecoratorEvaluation: DecoratorEvaluation[]
+  ): boolean {
+    return (
+      nodeDecoratorEvaluation &&
+      nodeDecoratorEvaluation.some(e => e.expression === 'Effect')
+    );
   }
 
-  function isEffectDecoratorWithoutDispatch(nodeDecoratorEvaluation: DecoratorEvaluation[]): boolean {
-    return nodeDecoratorEvaluation.some(e => e.arguments.some(e => e.name === 'dispatch' && e.value === false));
+  function isEffectDecoratorWithoutDispatch(
+    nodeDecoratorEvaluation: DecoratorEvaluation[]
+  ): boolean {
+    return nodeDecoratorEvaluation.some(e =>
+      e.arguments.some(e => e.name === 'dispatch' && e.value === false)
+    );
   }
 
   function evaluateNode(node: ts.Node): any {
@@ -121,7 +139,9 @@ function generateEffectsMapping(
         const callExpression = node as ts.CallExpression;
         return {
           expression: evaluateNode(callExpression.expression),
-          arguments: callExpression.arguments.map(arg => evaluateNode(arg)).reduce((a, b) => a.concat(b), [])
+          arguments: callExpression.arguments
+            .map(arg => evaluateNode(arg))
+            .reduce((a, b) => a.concat(b), [])
         };
       case ts.SyntaxKind.Decorator:
         const decorator = node as ts.Decorator;
@@ -148,9 +168,3 @@ function generateEffectsMapping(
     }
   }
 }
-
-generateEffectsMapping(process.argv.slice(2), {
-  target: ts.ScriptTarget.ES5,
-  module: ts.ModuleKind.CommonJS
-});
-

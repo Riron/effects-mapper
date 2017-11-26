@@ -1,0 +1,14 @@
+{
+  "name": "effects-demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "file.js",
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@angular/core": "^5.0.0",
+    "@ngrx/effects": "^4.1.1",
+    "@ngrx/store": "^4.1.1",
+    "rxjs": "^5.5.0"
+  }
+}

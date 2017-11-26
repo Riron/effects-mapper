@@ -5,12 +5,16 @@
   "main": "parser.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "parse": "./node_modules/.bin/tsc parser.ts --m commonjs && node parser.js file.ts",
-    "print": "./node_modules/.bin/tsc print.ts --m commonjs && node print.js"
+    "build": "./node_modules/.bin/tsc",
+    "generate": "npm run build && node dist/index.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@ngrx/store": "^4.1.1"
+    "@types/glob": "^5.0.33",
+    "@types/node": "^8.0.53",
+    "chalk": "^2.3.0",
+    "glob": "^7.1.2",
+    "typescript": "^2.6.1"
   }
 }
