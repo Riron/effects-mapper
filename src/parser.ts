@@ -42,7 +42,7 @@ export function generateEffectsMapping(fileNames: string[]): Mapping[] {
   return output;
 
   function visit(node: ts.Node, sourceFile: ts.SourceFile) {
-    const nodeDecoratorEvaluation = evaluateNode(node);
+    const nodeDecoratorEvaluation = evaluateDecoratorNode(node);
 
     if (
       ts.isPropertyDeclaration(node) &&
@@ -89,6 +89,7 @@ export function generateEffectsMapping(fileNames: string[]): Mapping[] {
 
     // Is generic ?
     const genericType = type as ts.GenericType;
+
     if (genericType.typeArguments && genericType.typeArguments.length) {
       return genericType.typeArguments.map(t => checker.typeToString(t));
     }
@@ -101,6 +102,8 @@ export function generateEffectsMapping(fileNames: string[]): Mapping[] {
     if (!node.initializer) {
       return '';
     }
+
+    console.log(evaluateExpression(node.initializer));
 
     // TODO Look at when no typings info is specified
     // this.action$.ofType<TYPE>...
@@ -128,43 +131,134 @@ export function generateEffectsMapping(fileNames: string[]): Mapping[] {
     );
   }
 
-  function evaluateNode(node: ts.Node): any {
+  function evaluateDecoratorNode(node: ts.Node): any {
     switch (node.kind) {
       case ts.SyntaxKind.PropertyDeclaration:
         if (!node.decorators) {
           return null;
         }
-        return node.decorators.map(d => evaluateNode(d));
+        return node.decorators.map(d => evaluateDecoratorNode(d));
       case ts.SyntaxKind.CallExpression:
         const callExpression = node as ts.CallExpression;
         return {
-          expression: evaluateNode(callExpression.expression),
+          expression: evaluateDecoratorNode(callExpression.expression),
           arguments: callExpression.arguments
-            .map(arg => evaluateNode(arg))
+            .map(arg => evaluateDecoratorNode(arg))
             .reduce((a, b) => a.concat(b), [])
         };
       case ts.SyntaxKind.Decorator:
         const decorator = node as ts.Decorator;
-        return evaluateNode(decorator.expression);
+        return evaluateDecoratorNode(decorator.expression);
 
       case ts.SyntaxKind.Identifier:
         const identifier = node as ts.Identifier;
         return identifier.text;
       case ts.SyntaxKind.ObjectLiteralExpression:
         const objectLiteralExpression = node as ts.ObjectLiteralExpression;
-        return objectLiteralExpression.properties.map(p => evaluateNode(p));
+        return objectLiteralExpression.properties.map(p =>
+          evaluateDecoratorNode(p)
+        );
       case ts.SyntaxKind.PropertyAssignment:
         const propertyAssignment = node as ts.PropertyAssignment;
         return {
-          name: evaluateNode(propertyAssignment.name),
-          value: evaluateNode(propertyAssignment.initializer)
+          name: evaluateDecoratorNode(propertyAssignment.name),
+          value: evaluateDecoratorNode(propertyAssignment.initializer)
         };
       case ts.SyntaxKind.FalseKeyword:
         return false;
       case ts.SyntaxKind.TrueKeyword:
         return true;
       default:
-        return node.kind;
+        return null;
     }
   }
+
+  function evaluateExpression(node: ts.Node): any {
+    switch (node.kind) {
+      case ts.SyntaxKind.CallExpression:
+        const callExpression = node as ts.CallExpression;
+        return evaluateExpression(callExpression.arguments[0]);
+
+      case ts.SyntaxKind.ArrowFunction:
+        const arrowFunction = node as ts.ArrowFunction;
+        return evaluateExpression(arrowFunction.body);
+
+      case ts.SyntaxKind.NewExpression:
+        const newExpression = node as ts.NewExpression;
+
+        const classIdentifier = newExpression.expression as ts.Identifier;
+        const propertiesOfType = checker
+          .getPropertiesOfType(checker.getTypeAtLocation(newExpression))
+          .filter(p => p.name === 'type');
+
+        if (propertiesOfType.length === 0) {
+          return undefined;
+        }
+
+        // type prop can be declared or passed as a constructor param
+        const result = evaluateExpression(
+          propertiesOfType[0].valueDeclaration!
+        );
+        if (result !== 'DECLARED_CONSTRUCT') {
+          return result;
+        }
+
+        const args = newExpression.arguments;
+        if (!args) {
+          return undefined;
+        }
+        // TODO: quel argument choisir ?
+        const argValues = args.map(a => evaluateExpression(a));
+        return argValues[0];
+
+      case ts.SyntaxKind.Parameter:
+        const parameter = node as ts.ParameterDeclaration;
+        return 'DECLARED_CONSTRUCT'; // declared in constructor
+
+      case ts.SyntaxKind.PropertyDeclaration:
+        const propertyDeclaration = node as ts.PropertyDeclaration;
+        if (propertyDeclaration.initializer) {
+          return evaluateExpression(propertyDeclaration.initializer);
+        }
+        return 'DECLARED_CONSTRUCT'; // declared in constructor
+
+      case ts.SyntaxKind.ParenthesizedExpression:
+        const parenthesizedExpression = node as ts.ParenthesizedExpression;
+        return evaluateExpression(parenthesizedExpression.expression);
+
+      case ts.SyntaxKind.ObjectLiteralExpression:
+        const objectLiteralExpression = node as ts.ObjectLiteralExpression;
+        const typeProperties = objectLiteralExpression.properties.filter(
+          v =>
+            ts.isIdentifier(v.name!) &&
+            (v.name! as ts.Identifier).text === 'type'
+        );
+        if (typeProperties.length > 0) {
+          const typeProperty = typeProperties.pop();
+          return evaluateExpression(typeProperty!);
+        }
+        return undefined;
+
+      case ts.SyntaxKind.PropertyAssignment:
+        const propertyAssignment = node as ts.PropertyAssignment;
+        return evaluateExpression(propertyAssignment.initializer);
+
+      case ts.SyntaxKind.StringLiteral:
+        const stringLiteral = node as ts.StringLiteral;
+        return stringLiteral.text;
+
+      default:
+        return undefined;
+    }
+
+    //checker.getConstantValue()
+  }
+}
+
+const empty = ts.createNodeArray<any>();
+
+function arrayOrEmpty<T extends ts.Node>(
+  v: ts.NodeArray<T> | undefined
+): ts.NodeArray<T> {
+  return v || empty;
 }

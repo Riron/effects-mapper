@@ -16,5 +16,9 @@
     "chalk": "^2.3.0",
     "glob": "^7.1.2",
     "typescript": "^2.6.1"
+  },
+  "devDependencies": {
+    "@types/mocha": "^2.2.44",
+    "mocha": "^4.0.1"
   }
 }

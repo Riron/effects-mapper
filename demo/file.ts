@@ -17,6 +17,10 @@ class FetchEvents implements Action {
   readonly type = 'FetchEvents';
 }
 
+class CustomAction {
+  constructor(private type: string) {}
+}
+
 export class EventsEffectsService {
   constructor(private actions$: Actions) {}
 
@@ -43,4 +47,14 @@ export class EventsEffectsService {
   fetchEvent2$ = this.actions$
     .ofType<FetchEvent>('FETCH_EVENT')
     .pipe(map((payload: any) => new EditEvent()));
+
+  @Effect()
+  try$ = this.actions$
+    .ofType('AA')
+    .pipe(map((payload: any) => ({ type: 'TEST' })));
+
+  @Effect()
+  test$ = this.actions$
+    .ofType('TEST')
+    .pipe(map((payload: any) => new CustomAction('LOL')));
 }
