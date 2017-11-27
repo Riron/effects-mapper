@@ -20,8 +20,9 @@ export function evaluateExpression(
       const newExpression = node as ts.NewExpression;
 
       const classIdentifier = newExpression.expression as ts.Identifier;
+      const type = checker.getTypeAtLocation(newExpression);
       const propertiesOfType = checker
-        .getPropertiesOfType(checker.getTypeAtLocation(newExpression))
+        .getPropertiesOfType(type)
         .filter(p => p.name === 'type');
 
       if (propertiesOfType.length === 0) {
@@ -37,13 +38,22 @@ export function evaluateExpression(
         return result;
       }
 
+      // Look for a param called `type` in the constructor
+      const classConstructorParams = evaluateClass(
+        type.symbol!.valueDeclaration!
+      );
+      const indexOfType = classConstructorParams.indexOf('type');
+
+      // Get new type() params
       const args = newExpression.arguments;
-      if (!args) {
+      // if there is no args, or there is no type prop in the constructor,
+      // we cannot guess. Return undefined
+      if (!args || indexOfType === -1) {
         return undefined;
       }
-      // TODO: quel argument choisir ?
+      // Otherwise, we got a match. Evaluate arg and return it
       const argValues = args.map(a => evaluateExpression(a, checker));
-      return argValues[0];
+      return argValues[indexOfType];
 
     case ts.SyntaxKind.Parameter:
       const parameter = node as ts.ParameterDeclaration;
@@ -75,6 +85,58 @@ export function evaluateExpression(
     case ts.SyntaxKind.PropertyAssignment:
       const propertyAssignment = node as ts.PropertyAssignment;
       return evaluateExpression(propertyAssignment.initializer, checker);
+
+    case ts.SyntaxKind.StringLiteral:
+      const stringLiteral = node as ts.StringLiteral;
+      return stringLiteral.text;
+
+    default:
+      return undefined;
+  }
+}
+
+function evaluateClass(node: ts.Node): any {
+  switch (node.kind) {
+    case ts.SyntaxKind.ClassDeclaration:
+      const classDeclaration = node as ts.ClassDeclaration;
+      return classDeclaration.members
+        .map(member => evaluateClass(member))
+        .reduce((a, b) => a.concat(b), []);
+
+    case ts.SyntaxKind.Constructor:
+      const constructor = node as ts.ConstructorDeclaration;
+      return constructor.parameters.map(parameter => evaluateClass(parameter));
+
+    case ts.SyntaxKind.Parameter:
+      const parameter = node as ts.ParameterDeclaration;
+      return evaluateClass(parameter.name);
+
+    case ts.SyntaxKind.Identifier:
+      const identifier = node as ts.Identifier;
+      return identifier.text;
+
+    default:
+      return undefined;
+  }
+}
+
+export function evaluateOfType(node: ts.Node): any {
+  switch (node.kind) {
+    case ts.SyntaxKind.CallExpression:
+      const callExpression = node as ts.CallExpression;
+      if (
+        callExpression.arguments.every(
+          a => a.kind === ts.SyntaxKind.StringLiteral
+        )
+      ) {
+        return callExpression.arguments.map(arg => evaluateOfType(arg));
+      }
+
+      return evaluateOfType(callExpression.expression);
+
+    case ts.SyntaxKind.PropertyAccessExpression:
+      const propertyAccessExpression = node as ts.PropertyAccessExpression;
+      return evaluateOfType(propertyAccessExpression.expression);
 
     case ts.SyntaxKind.StringLiteral:
       const stringLiteral = node as ts.StringLiteral;

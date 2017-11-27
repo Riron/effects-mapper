@@ -1,6 +1,6 @@
 import * as ts from 'typescript';
 import { writeFileSync } from 'fs';
-import { evaluateExpression, evaluateDecoratorNode } from './evaluator';
+import { evaluateExpression, evaluateDecoratorNode, evaluateOfType } from './evaluator';
 
 interface DecoratorEvaluation {
   expression: string;
@@ -54,11 +54,9 @@ export function generateEffectsMapping(fileNames: string[]): Mapping[] {
 
       const { fileInfo } = report(node, sourceFile);
 
-      const returnType = getSymbolType(nodeDecoratorEvaluation, symbol!);
+      const returnType = getSymbolType(nodeDecoratorEvaluation, node);
 
-      const inputTypes = getOfType(node)
-        .split('|')
-        .map(s => s.trim());
+      const inputTypes = getOfType(node);
 
       output.push({ name, returnType, inputTypes, fileInfo });
     }
@@ -71,32 +69,20 @@ export function generateEffectsMapping(fileNames: string[]): Mapping[] {
       node.getStart()
     );
     return {
-      fileInfo: `${sourceFile.fileName} (${line + 1},${character + 1})`
+      fileInfo: `${sourceFile.fileName}:${line + 1}:${character + 1}`
     };
   }
 
   function getSymbolType(
     nodeDecoratorEvaluation: DecoratorEvaluation[],
-    symbol: ts.Symbol
+    node: ts.PropertyDeclaration
   ) {
-    if (isEffectDecoratorWithoutDispatch(nodeDecoratorEvaluation)) {
+    if (isEffectDecoratorWithoutDispatch(nodeDecoratorEvaluation) || !node.initializer) {
       return ['void'];
     }
 
-    const type = checker.getTypeOfSymbolAtLocation(
-      symbol,
-      symbol.valueDeclaration!
-    );
+    return evaluateExpression(node.initializer, checker);
 
-    // Is generic ?
-    const genericType = type as ts.GenericType;
-
-    if (genericType.typeArguments && genericType.typeArguments.length) {
-      return genericType.typeArguments.map(t => checker.typeToString(t));
-    }
-
-    // If not, weird but still return type
-    return [checker.typeToString(type)];
   }
 
   function getOfType(node: ts.PropertyDeclaration) {
@@ -104,15 +90,7 @@ export function generateEffectsMapping(fileNames: string[]): Mapping[] {
       return '';
     }
 
-    const extractedType = evaluateExpression(node.initializer, checker);
-
-    // TODO Look at when no typings info is specified
-    // this.action$.ofType<TYPE>...
-    return node.initializer
-      .getChildAt(0)
-      .getChildAt(0)
-      .getChildAt(2)
-      .getText();
+    return evaluateOfType(node.initializer);
   }
 
   function isDecoratedWithEffect(

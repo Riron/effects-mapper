@@ -9,13 +9,13 @@ class FetchEvent implements Action {
   readonly type = 'FETCH_EVENT';
 }
 class CreateEvent implements Action {
-  readonly type = 'CreateEvent';
+  readonly type = 'CREATE_EVENT';
 }
 class EditEvent implements Action {
-  readonly type = 'EditEvent';
+  readonly type = 'EDIT_EVENT';
 }
 class FetchEvents implements Action {
-  readonly type = 'FetchEvents';
+  readonly type = 'FETCH_EVENTS';
 }
 
 class CustomAction {

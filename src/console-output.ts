@@ -13,7 +13,7 @@ function getEffectText(node: Output, indent: number) {
 
   return `${dashes} ${chalk.bold(node.actionName)} from ${chalk.yellow(
     node.from
-  )} [${chalk.blue.underline.italic(node.fileInfo)}]`;
+  )} [ ${chalk.blue.underline.italic(node.fileInfo)} ]`;
 }
 
 function print(tree: Output[], indent: number = 1): string {
