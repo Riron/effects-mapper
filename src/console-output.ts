@@ -7,7 +7,7 @@ const bulletPoints = ['-', '+', '•'];
 function getEffectText(node: Output, indent: number) {
   let dashes = '';
   for (let i = 0; i < indent - 1; i++) {
-    dashes += ' ';
+    dashes += '   ';
   }
   dashes += `${bulletPoints[indent % bulletPoints.length]} >`;
 

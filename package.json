@@ -4,9 +4,10 @@
   "description": "",
   "main": "parser.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "build": "./node_modules/.bin/tsc",
-    "generate": "npm run build && node dist/index.js"
+    "generate": "npm run build && node dist/index.js",
+    "pretest": "./node_modules/.bin/tsc tests/evaluator.test.ts --module commonjs --outDir ./tests/dist",
+    "test": "./node_modules/.bin/mocha ./tests/dist/**/*.test.js"
   },
   "author": "",
   "license": "ISC",
@@ -18,7 +19,9 @@
     "typescript": "^2.6.1"
   },
   "devDependencies": {
+    "@types/chai": "^4.0.5",
     "@types/mocha": "^2.2.44",
+    "chai": "^4.1.2",
     "mocha": "^4.0.1"
   }
 }
