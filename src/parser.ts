@@ -90,7 +90,7 @@ export function generateEffectsMapping(fileNames: string[]): Mapping[] {
       return '';
     }
 
-    return evaluateOfType(node.initializer);
+    return evaluateOfType(node.initializer, checker);
   }
 
   function isDecoratedWithEffect(

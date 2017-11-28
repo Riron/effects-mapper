@@ -22,6 +22,9 @@ class CustomAction {
   constructor(private type: string) {}
 }
 
+const LOL_CONST = 'LOL';
+const TEST_CONST = 'TEST';
+
 export class EventsEffectsService {
   constructor(private actions$: Actions) {}
 
@@ -77,9 +80,13 @@ export class EventsEffectsService {
     .ofType<FetchEvent>('FETCH_EVENT')
     .pipe(map((payload: any) => new EditEvent()));
 
-
   @Effect()
   test7$ = this.actions$
     .ofType('TEST')
     .pipe(map((payload: any) => new CustomAction('LOL')));
+
+  @Effect()
+  test8$ = this.actions$
+    .ofType(TEST_CONST)
+    .pipe(map((payload: any) => new CustomAction(LOL_CONST)));
 }

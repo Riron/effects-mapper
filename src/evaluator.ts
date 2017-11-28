@@ -80,6 +80,7 @@ export function evaluateExpression(
         const typeProperty = typeProperties.pop();
         return evaluateExpression(typeProperty!, checker);
       }
+
       return undefined;
 
     case ts.SyntaxKind.PropertyAssignment:
@@ -89,6 +90,42 @@ export function evaluateExpression(
     case ts.SyntaxKind.StringLiteral:
       const stringLiteral = node as ts.StringLiteral;
       return stringLiteral.text;
+
+    case ts.SyntaxKind.Identifier:
+      const identifier = node as ts.Identifier;
+      const symbol = checker.getSymbolAtLocation(identifier);
+      if (!symbol) {
+        return identifier.text;
+      }
+
+      if (!symbol.valueDeclaration) {
+        const aliasedSymbol = checker.getAliasedSymbol(symbol);
+
+        if (!aliasedSymbol.valueDeclaration) {
+          return undefined;
+        }
+        return evaluateExpression(aliasedSymbol.valueDeclaration!, checker);
+      }
+
+      return evaluateExpression(symbol.valueDeclaration, checker);
+
+    case ts.SyntaxKind.VariableDeclaration:
+      const variableDeclaration = node as ts.VariableDeclaration;
+      if (!variableDeclaration.initializer) {
+        return undefined;
+      }
+
+      return evaluateExpression(variableDeclaration.initializer, checker);
+
+    case ts.SyntaxKind.Block:
+      const block = node as ts.Block;
+      return block.statements
+        .filter(s => s.kind === ts.SyntaxKind.ReturnStatement)
+        .map(s => evaluateExpression(s, checker));
+
+    case ts.SyntaxKind.ReturnStatement:
+      const returnStatement = node as ts.ReturnStatement;
+      return evaluateExpression(returnStatement.expression!, checker);
 
     default:
       return undefined;
@@ -115,32 +152,67 @@ function evaluateClass(node: ts.Node): any {
       const identifier = node as ts.Identifier;
       return identifier.text;
 
+    case ts.SyntaxKind.PropertyDeclaration:
+      const propertyDeclaration = node as ts.PropertyDeclaration;
+      return evaluateClass(propertyDeclaration.name);
+
     default:
       return undefined;
   }
 }
 
-export function evaluateOfType(node: ts.Node): any {
+export function evaluateOfType(node: ts.Node, checker: ts.TypeChecker): any {
   switch (node.kind) {
     case ts.SyntaxKind.CallExpression:
       const callExpression = node as ts.CallExpression;
       if (
         callExpression.arguments.every(
-          a => a.kind === ts.SyntaxKind.StringLiteral
+          a =>
+            [ts.SyntaxKind.StringLiteral, ts.SyntaxKind.Identifier].indexOf(
+              a.kind
+            ) > -1
         )
       ) {
-        return callExpression.arguments.map(arg => evaluateOfType(arg));
+        return callExpression.arguments.map(arg =>
+          evaluateOfType(arg, checker)
+        );
       }
 
-      return evaluateOfType(callExpression.expression);
+      return evaluateOfType(callExpression.expression, checker);
 
     case ts.SyntaxKind.PropertyAccessExpression:
       const propertyAccessExpression = node as ts.PropertyAccessExpression;
-      return evaluateOfType(propertyAccessExpression.expression);
+      return evaluateOfType(propertyAccessExpression.expression, checker);
 
     case ts.SyntaxKind.StringLiteral:
       const stringLiteral = node as ts.StringLiteral;
       return stringLiteral.text;
+
+    case ts.SyntaxKind.Identifier:
+      const identifier = node as ts.Identifier;
+      const symbol = checker.getSymbolAtLocation(identifier);
+      if (!symbol) {
+        return identifier.text;
+      }
+
+      if (!symbol.valueDeclaration) {
+        const aliasedSymbol = checker.getAliasedSymbol(symbol);
+
+        if (!aliasedSymbol.valueDeclaration) {
+          return undefined;
+        }
+        return evaluateExpression(aliasedSymbol.valueDeclaration!, checker);
+      }
+
+      return evaluateExpression(symbol.valueDeclaration, checker);
+
+    case ts.SyntaxKind.VariableDeclaration:
+      const variableDeclaration = node as ts.VariableDeclaration;
+      if (!variableDeclaration.initializer) {
+        return undefined;
+      }
+
+      return evaluateExpression(variableDeclaration.initializer, checker);
 
     default:
       return undefined;
@@ -169,6 +241,7 @@ export function evaluateDecoratorNode(node: ts.Node): any {
     case ts.SyntaxKind.Identifier:
       const identifier = node as ts.Identifier;
       return identifier.text;
+
     case ts.SyntaxKind.ObjectLiteralExpression:
       const objectLiteralExpression = node as ts.ObjectLiteralExpression;
       return objectLiteralExpression.properties.map(p =>

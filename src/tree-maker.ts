@@ -9,7 +9,7 @@ export interface Output {
 
 function getActionMap(actionName: string, mappings: Mapping[]): Mapping[] {
   const effects = mappings.filter(v =>
-    v.inputTypes.some(t => t === actionName)
+    v.inputTypes.some(t => !!actionName && t === actionName)
   );
 
   if (effects.length == 0) {

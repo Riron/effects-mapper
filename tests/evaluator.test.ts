@@ -1,4 +1,4 @@
-import { evaluateDecoratorNode, evaluateExpression } from '../src/evaluator';
+import { evaluateDecoratorNode, evaluateExpression, evaluateOfType } from '../src/evaluator';
 import { expect } from 'chai';
 import * as ts from 'typescript';
 import 'mocha';
@@ -35,6 +35,29 @@ describe('Actions returned as class', () => {
 
     const result = evaluateExpression(initializer, program.getTypeChecker());
     expect(result[0]).to.equal('FETCH_EVENT');
+  });
+
+  it('should find ReturnType with single class returned, with param type as const', () => {
+    const initializer = getInitializerAt(propertyDeclarations, 8);
+
+    const result = evaluateExpression(initializer, program.getTypeChecker());
+    expect(result[0]).to.equal('LOL');
+  });
+});
+
+describe('Input actions', () => {
+  it('should find InputTypes when passed as strings', () => {
+    const initializer = getInitializerAt(propertyDeclarations, 0);
+
+    const result = evaluateOfType(initializer, program.getTypeChecker());
+    expect(result[0]).to.equal('LOGIN');
+  });
+
+  it('should find InputTypes when passed as const', () => {
+    const initializer = getInitializerAt(propertyDeclarations, 8);
+
+    const result = evaluateOfType(initializer, program.getTypeChecker());
+    expect(result[0]).to.equal('TEST');
   });
 });
 
