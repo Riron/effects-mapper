@@ -70,6 +70,12 @@ export function evaluateExpression(
       const parenthesizedExpression = node as ts.ParenthesizedExpression;
       return evaluateExpression(parenthesizedExpression.expression, checker);
 
+    case ts.SyntaxKind.ArrayLiteralExpression:
+      const arrayLiteralExpression = node as ts.ArrayLiteralExpression;
+      return arrayLiteralExpression.elements.map(e =>
+        evaluateExpression(e, checker)
+      );
+
     case ts.SyntaxKind.ObjectLiteralExpression:
       const objectLiteralExpression = node as ts.ObjectLiteralExpression;
       const typeProperties = objectLiteralExpression.properties.filter(

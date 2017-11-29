@@ -1,3 +1,4 @@
+import { exportedType, ExportedEvent } from './exports';
 import { Action } from '@ngrx/store';
 import { Actions, Effect } from '@ngrx/effects';
 import { from } from 'rxjs/observable/from';
@@ -22,7 +23,7 @@ class CustomAction {
   constructor(private type: string) {}
 }
 
-const LOL_CONST = 'LOL';
+const OTHER_CONST = 'OTHER';
 const TEST_CONST = 'TEST';
 
 export class EventsEffectsService {
@@ -88,5 +89,15 @@ export class EventsEffectsService {
   @Effect()
   test8$ = this.actions$
     .ofType(TEST_CONST)
-    .pipe(map((payload: any) => new CustomAction(LOL_CONST)));
+    .pipe(map((payload: any) => new CustomAction(OTHER_CONST)));
+
+  @Effect()
+  test9$ = this.actions$
+    .ofType(TEST_CONST, OTHER_CONST)
+    .pipe(map((payload: any) => new CustomAction('YET_ANOTHER')));
+
+  @Effect()
+  test10$ = this.actions$
+    .ofType(exportedType)
+    .pipe(map((payload: any) => new ExportedEvent()));
 }

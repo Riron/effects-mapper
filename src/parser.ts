@@ -55,6 +55,7 @@ export function generateEffectsMapping(fileNames: string[]): Mapping[] {
       const { fileInfo } = report(node, sourceFile);
 
       const returnType = getSymbolType(nodeDecoratorEvaluation, node);
+      if (returnType.indexOf(undefined) > -1) {console.log(node.getText())}
 
       const inputTypes = getOfType(node);
 

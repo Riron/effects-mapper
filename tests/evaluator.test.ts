@@ -1,4 +1,8 @@
-import { evaluateDecoratorNode, evaluateExpression, evaluateOfType } from '../src/evaluator';
+import {
+  evaluateDecoratorNode,
+  evaluateExpression,
+  evaluateOfType
+} from '../src/evaluator';
 import { expect } from 'chai';
 import * as ts from 'typescript';
 import 'mocha';
@@ -37,20 +41,51 @@ describe('Actions returned as class', () => {
     expect(result[0]).to.equal('FETCH_EVENT');
   });
 
+  it('should find ReturnType with single imported class returned, containing readonly type', () => {
+    const initializer = getInitializerAt(propertyDeclarations, 10);
+
+    const result = evaluateExpression(initializer, program.getTypeChecker());
+    expect(result[0]).to.equal('EXPORTED_EVENT');
+  });
+
   it('should find ReturnType with single class returned, with param type as const', () => {
     const initializer = getInitializerAt(propertyDeclarations, 8);
 
     const result = evaluateExpression(initializer, program.getTypeChecker());
-    expect(result[0]).to.equal('LOL');
+    expect(result[0]).to.equal('OTHER');
+  });
+
+  it('should find ReturnType with single class returned, with param type as string', () => {
+    const initializer = getInitializerAt(propertyDeclarations, 9);
+
+    const result = evaluateExpression(initializer, program.getTypeChecker());
+    expect(result[0]).to.equal('YET_ANOTHER');
+  });
+});
+
+describe('Actions with no dispatch', () => {
+  it('should find ReturnType undefined', () => {
+    const initializer = getInitializerAt(propertyDeclarations, 3);
+
+    const result = evaluateExpression(initializer, program.getTypeChecker());
+    expect(result[0]).to.equal(undefined);
   });
 });
 
 describe('Input actions', () => {
-  it('should find InputTypes when passed as strings', () => {
+  it('should find InputTypes when passed as string', () => {
     const initializer = getInitializerAt(propertyDeclarations, 0);
 
     const result = evaluateOfType(initializer, program.getTypeChecker());
     expect(result[0]).to.equal('LOGIN');
+  });
+
+  it('should find InputTypes when passed as multiple strings', () => {
+    const initializer = getInitializerAt(propertyDeclarations, 3);
+
+    const result = evaluateOfType(initializer, program.getTypeChecker());
+    expect(result[0]).to.equal('CREATE_EVENT');
+    expect(result[1]).to.equal('EDIT_EVENT');
   });
 
   it('should find InputTypes when passed as const', () => {
@@ -58,6 +93,21 @@ describe('Input actions', () => {
 
     const result = evaluateOfType(initializer, program.getTypeChecker());
     expect(result[0]).to.equal('TEST');
+  });
+
+  it('should find InputTypes when passed as imported const', () => {
+    const initializer = getInitializerAt(propertyDeclarations, 10);
+
+    const result = evaluateOfType(initializer, program.getTypeChecker());
+    expect(result[0]).to.equal('EXPORTED');
+  });
+
+  it('should find InputTypes when passed as multiple consts', () => {
+    const initializer = getInitializerAt(propertyDeclarations, 9);
+
+    const result = evaluateOfType(initializer, program.getTypeChecker());
+    expect(result[0]).to.equal('TEST');
+    expect(result[1]).to.equal('OTHER');
   });
 });
 
