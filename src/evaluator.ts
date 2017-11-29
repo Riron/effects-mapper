@@ -143,6 +143,8 @@ function evaluateClass(node: ts.Node): any {
     case ts.SyntaxKind.ClassDeclaration:
       const classDeclaration = node as ts.ClassDeclaration;
       return classDeclaration.members
+        // Here we are only interested by constructors
+        .filter(member => member.kind === ts.SyntaxKind.Constructor)
         .map(member => evaluateClass(member))
         .reduce((a, b) => a.concat(b), []);
 
@@ -150,7 +152,7 @@ function evaluateClass(node: ts.Node): any {
       const constructor = node as ts.ConstructorDeclaration;
       return constructor.parameters.map(parameter => evaluateClass(parameter));
 
-    case ts.SyntaxKind.Parameter:
+      case ts.SyntaxKind.Parameter:
       const parameter = node as ts.ParameterDeclaration;
       return evaluateClass(parameter.name);
 

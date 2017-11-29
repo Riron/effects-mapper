@@ -20,7 +20,10 @@ class FetchEvents implements Action {
 }
 
 class CustomAction {
+  private anything: string;
   constructor(private type: string) {}
+
+  evenAMethod() {}
 }
 
 const OTHER_CONST = 'OTHER';
