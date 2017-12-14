@@ -1,7 +1,7 @@
 {
-  "name": "test-ast",
+  "name": "effects-mapper",
   "version": "1.0.0",
-  "description": "",
+  "description": "Effects mapper for @ngrx/effects",
   "main": "parser.js",
   "scripts": {
     "build": "./node_modules/.bin/tsc",

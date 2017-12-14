@@ -8,15 +8,15 @@ app ? Easily generate a map of whats action causes what.
 Install the library from npm.
 
 ```
-npm install -g effects-mapper
+npm install effects-mapper
 ```
 
 Use the CLI by providing the folder your app is in, or by directly passing
 typescript files:
 
 ```
-effects-mapper ./demo // Pass entire folder
-effects-mapper ./file1.ts ./file2.ts // Pass individual files
+npm run generate ./demo // Pass entire folder
+npm run generate ./file1.ts ./file2.ts // Pass individual files
 ```
 
 The output outputed to the console for now.
