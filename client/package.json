@@ -27,7 +27,6 @@
     "vue": "^2.5.10"
   },
   "devDependencies": {
-    "ts-loader": "^3.2.0",
     "webpack": "^3.9.1",
     "webpack-dev-server": "^2.9.5"
   }
