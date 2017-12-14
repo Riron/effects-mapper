@@ -3,30 +3,47 @@
 Using `@ngrx/effects` ? Ever had trouble following the flow of effects in your
 app ? Easily generate a map of whats action causes what.
 
-## Usage
+## 📦 Installation & Usage
 
-Install the library from npm.
+To install this application, you'll need
+[Node.js](https://nodejs.org/en/download/) 8+ (which comes with
+[npm](http://npmjs.com)) installed on your computer. You'll also need [Git](https://git-scm.com) to run the project from source:
 
+```bash
+
+# Clone this repository
+$ git clone https://github.com/Riron/effects-mapper
+
+# Go into the repository
+$ cd effects-mapper
+
+# Install dependencies
+$ npm install
+
+# Run the app on an entire folder
+$ npm run console ./demo
+# Or on individual files
+$ npm run console ./file1.ts ./file2.ts
 ```
-npm install effects-mapper
+
+You can print the result either to the console or to the browser UI:
+
+```bash
+# Use the console output
+$ npm run console
+
+# Use the browser output
+$ npm run browser
 ```
 
-Use the CLI by providing the folder your app is in, or by directly passing
-typescript files:
 
-```
-npm run generate ./demo // Pass entire folder
-npm run generate ./file1.ts ./file2.ts // Pass individual files
-```
 
-The output outputed to the console for now.
-
-## How does it work ?
+## 🔬 How does it work ?
 
 This tool statically analyze your code. It uses the Typescript compiler
 to grab all properties decorated with the `@Effect()` decorator and then perform its work on it's `ofType()` and return call.
 
-## Edges cases
+## 💣 Edges cases
 
 Some edge cases are not fully supported yet. If the library is not able to
 determine the return type of an effect, it will consider the return type is
