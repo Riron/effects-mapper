@@ -1,0 +1,90 @@
+<!doctype html>
+<html>
+
+<head>
+	<title>State tree with d3-state-visualizer</title>
+	<style type="text/css">
+		html,
+		body,
+		.row {
+			height: 100%
+		}
+
+		.sidebar {
+			position: fixed !important;
+			overflow: scroll;
+			top: 56px;
+			height: 100%;
+		}
+
+		body {
+			display: flex;
+			flex-direction: column;
+		}
+
+		.container-fluid {
+			flex: 1
+		}
+
+		.node {
+			cursor: pointer;
+		}
+
+		.nodeCircle {
+			stroke: rgb(61, 23, 199);
+			stroke-width: 1.5px;
+		}
+
+		.nodeText {
+			font-family: sans-serif;
+			font-size: 10px;
+		}
+
+		.link {
+			fill: none;
+			stroke: #ccc;
+			stroke-width: 1px;
+		}
+
+		.tooltip {
+			font-family: Consolas, Menlo, Monaco, monospace;
+			font-size: 0.8em;
+			background: rgba(0, 0, 0, 0.8);
+			color: white;
+			padding: 10px;
+			border-radius: 5px;
+		}
+	</style>
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
+	 crossorigin="anonymous">
+</head>
+
+<body>
+	<header>
+		<nav class="navbar navbar-dark bg-dark">
+			<span class="navbar-brand mb-0 h1">Effects Mapper visualization</span>
+		</nav>
+	</header>
+
+	<div class="container-fluid">
+		<div class="row">
+			<nav class="col-sm-3 col-md-2 d-none d-sm-block bg-light sidebar">
+				<input class="form-control" type="search" placeholder="Search" v-model="search">
+
+				<ul class="nav nav-pills flex-column" id="effects-list">
+					<li v-for="effect in filteredEffects" v-on:click="selectEffect(effect)">
+						{{ effect }}
+					</li>
+				</ul>
+			</nav>
+
+			<main class="col-sm-9 ml-sm-auto col-md-10 pt-3" id="root"></main>
+		</div>
+	</div>
+
+
+	<script src="/bundle.js"></script>
+</body>
+
+</html>

@@ -13,7 +13,7 @@ function getActionMap(actionName: string, mappings: Mapping[]): Mapping[] {
   );
 
   if (effects.length == 0) {
-    return [{ name: 'undispatched action', inputTypes: [], returnType: [], fileInfo: '-'}];
+    return [{ name: 'action with no or unhandled side effect', inputTypes: [], returnType: [], fileInfo: '-'}];
   }
 
   return effects;

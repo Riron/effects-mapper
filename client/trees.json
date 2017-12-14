@@ -1,0 +1,3314 @@
+[
+    {
+        "name": "Effects",
+        "children": [
+            {
+                "name": "[cmd] get config",
+                "object": {
+                    "from": "cmdGetConfigHandler",
+                    "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/common/config/store/config.effect.ts:27:2"
+                },
+                "children": [
+                    {
+                        "name": "[api] get config",
+                        "object": {
+                            "from": "fetchConfigApi",
+                            "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/common/config/store/config.effect.ts:30:2"
+                        },
+                        "children": [
+                            {
+                                "name": "[api x] get config",
+                                "object": {
+                                    "from": "evtGetConfigError",
+                                    "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/common/config/store/config.effect.ts:42:2"
+                                },
+                                "children": [
+                                    {
+                                        "name": "[evt] get config",
+                                        "object": {
+                                            "from": "action with no or unhandled side effect",
+                                            "fileInfo": "-"
+                                        },
+                                        "children": []
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "[cmd] get config",
+                "object": {
+                    "from": "cmdGetConfigComplete",
+                    "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/common/config/store/config.effect.ts:46:2"
+                },
+                "children": []
+            }
+        ]
+    },
+    {
+        "name": "[api] get config",
+        "object": {
+            "from": "fetchConfigApi",
+            "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/common/config/store/config.effect.ts:30:2"
+        },
+        "children": [
+            {
+                "name": "[api x] get config",
+                "object": {
+                    "from": "evtGetConfigError",
+                    "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/common/config/store/config.effect.ts:42:2"
+                },
+                "children": [
+                    {
+                        "name": "[evt] get config",
+                        "object": {
+                            "from": "action with no or unhandled side effect",
+                            "fileInfo": "-"
+                        },
+                        "children": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Effects",
+        "children": [
+            {
+                "name": "[api v] get config",
+                "object": {
+                    "from": "dataGetConfig",
+                    "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/common/config/store/config.effect.ts:37:2"
+                },
+                "children": [
+                    {
+                        "name": "[data] set config",
+                        "object": {
+                            "from": "action with no or unhandled side effect",
+                            "fileInfo": "-"
+                        },
+                        "children": []
+                    }
+                ]
+            },
+            {
+                "name": "[api v] get config",
+                "object": {
+                    "from": "evtGetConfigSuccess",
+                    "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/common/config/store/config.effect.ts:40:2"
+                },
+                "children": [
+                    {
+                        "name": "[evt] get config",
+                        "object": {
+                            "from": "action with no or unhandled side effect",
+                            "fileInfo": "-"
+                        },
+                        "children": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "[api x] get config",
+        "object": {
+            "from": "evtGetConfigError",
+            "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/common/config/store/config.effect.ts:42:2"
+        },
+        "children": [
+            {
+                "name": "[evt] get config",
+                "object": {
+                    "from": "action with no or unhandled side effect",
+                    "fileInfo": "-"
+                },
+                "children": []
+            }
+        ]
+    },
+    {
+        "name": "Effects",
+        "children": [
+            {
+                "name": "[cmd] save config",
+                "object": {
+                    "from": "cmdSaveConfigHandler",
+                    "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/common/config/store/config.effect.ts:61:2"
+                },
+                "children": [
+                    {
+                        "name": "[api] save config",
+                        "object": {
+                            "from": "saveConfigApi",
+                            "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/common/config/store/config.effect.ts:64:2"
+                        },
+                        "children": [
+                            {
+                                "name": "[api x] save config",
+                                "object": {
+                                    "from": "evtSaveConfigError",
+                                    "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/common/config/store/config.effect.ts:76:2"
+                                },
+                                "children": [
+                                    {
+                                        "name": "[evt] save config",
+                                        "object": {
+                                            "from": "action with no or unhandled side effect",
+                                            "fileInfo": "-"
+                                        },
+                                        "children": []
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "[cmd] save config",
+                "object": {
+                    "from": "cmdSaveConfigComplete",
+                    "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/common/config/store/config.effect.ts:80:2"
+                },
+                "children": []
+            }
+        ]
+    },
+    {
+        "name": "[api] save config",
+        "object": {
+            "from": "saveConfigApi",
+            "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/common/config/store/config.effect.ts:64:2"
+        },
+        "children": [
+            {
+                "name": "[api x] save config",
+                "object": {
+                    "from": "evtSaveConfigError",
+                    "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/common/config/store/config.effect.ts:76:2"
+                },
+                "children": [
+                    {
+                        "name": "[evt] save config",
+                        "object": {
+                            "from": "action with no or unhandled side effect",
+                            "fileInfo": "-"
+                        },
+                        "children": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Effects",
+        "children": [
+            {
+                "name": "[api v] save config",
+                "object": {
+                    "from": "dataSaveConfig",
+                    "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/common/config/store/config.effect.ts:71:2"
+                },
+                "children": [
+                    {
+                        "name": "[data] set config",
+                        "object": {
+                            "from": "action with no or unhandled side effect",
+                            "fileInfo": "-"
+                        },
+                        "children": []
+                    }
+                ]
+            },
+            {
+                "name": "[api v] save config",
+                "object": {
+                    "from": "evtSaveConfigSuccess",
+                    "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/common/config/store/config.effect.ts:74:2"
+                },
+                "children": [
+                    {
+                        "name": "[evt] save config",
+                        "object": {
+                            "from": "action with no or unhandled side effect",
+                            "fileInfo": "-"
+                        },
+                        "children": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "[api x] save config",
+        "object": {
+            "from": "evtSaveConfigError",
+            "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/common/config/store/config.effect.ts:76:2"
+        },
+        "children": [
+            {
+                "name": "[evt] save config",
+                "object": {
+                    "from": "action with no or unhandled side effect",
+                    "fileInfo": "-"
+                },
+                "children": []
+            }
+        ]
+    },
+    {
+        "name": "Effects",
+        "children": [
+            {
+                "name": "[cmd] get draft project",
+                "object": {
+                    "from": "cmdGetDraftProjectsHandler",
+                    "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/draft/store/draft.effect.ts:21:2"
+                },
+                "children": [
+                    {
+                        "name": "[api] get draft projects",
+                        "object": {
+                            "from": "apiGetDraftProjects",
+                            "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/draft/store/draft.effect.ts:23:2"
+                        },
+                        "children": [
+                            {
+                                "name": "[api x] get draft projects",
+                                "object": {
+                                    "from": "evtGetDraftProjectsError",
+                                    "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/draft/store/draft.effect.ts:33:2"
+                                },
+                                "children": [
+                                    {
+                                        "name": "[evt] get draft projects",
+                                        "object": {
+                                            "from": "action with no or unhandled side effect",
+                                            "fileInfo": "-"
+                                        },
+                                        "children": []
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "[cmd] get draft project",
+                "object": {
+                    "from": "cmdGetDraftProjectsComplete",
+                    "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/draft/store/draft.effect.ts:36:2"
+                },
+                "children": []
+            }
+        ]
+    },
+    {
+        "name": "[api] get draft projects",
+        "object": {
+            "from": "apiGetDraftProjects",
+            "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/draft/store/draft.effect.ts:23:2"
+        },
+        "children": [
+            {
+                "name": "[api x] get draft projects",
+                "object": {
+                    "from": "evtGetDraftProjectsError",
+                    "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/draft/store/draft.effect.ts:33:2"
+                },
+                "children": [
+                    {
+                        "name": "[evt] get draft projects",
+                        "object": {
+                            "from": "action with no or unhandled side effect",
+                            "fileInfo": "-"
+                        },
+                        "children": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Effects",
+        "children": [
+            {
+                "name": "[api v] get draft projects",
+                "object": {
+                    "from": "dataDraftProjects",
+                    "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/draft/store/draft.effect.ts:29:2"
+                },
+                "children": [
+                    {
+                        "name": "[data] draft projects",
+                        "object": {
+                            "from": "action with no or unhandled side effect",
+                            "fileInfo": "-"
+                        },
+                        "children": []
+                    }
+                ]
+            },
+            {
+                "name": "[api v] get draft projects",
+                "object": {
+                    "from": "evtGetDraftProjectsSuccess",
+                    "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/draft/store/draft.effect.ts:31:2"
+                },
+                "children": [
+                    {
+                        "name": "[evt] get draft projects",
+                        "object": {
+                            "from": "action with no or unhandled side effect",
+                            "fileInfo": "-"
+                        },
+                        "children": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "[api x] get draft projects",
+        "object": {
+            "from": "evtGetDraftProjectsError",
+            "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/draft/store/draft.effect.ts:33:2"
+        },
+        "children": [
+            {
+                "name": "[evt] get draft projects",
+                "object": {
+                    "from": "action with no or unhandled side effect",
+                    "fileInfo": "-"
+                },
+                "children": []
+            }
+        ]
+    },
+    {
+        "name": "Effects",
+        "children": [
+            {
+                "name": "[cmd] get clients",
+                "object": {
+                    "from": "cmdGetClientsHandler",
+                    "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/client/store/client.effect.ts:29:2"
+                },
+                "children": [
+                    {
+                        "name": "[api] get clients",
+                        "object": {
+                            "from": "apiGetClients",
+                            "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/client/store/client.effect.ts:32:2"
+                        },
+                        "children": [
+                            {
+                                "name": "[api x] get clients",
+                                "object": {
+                                    "from": "evtGetClientsError",
+                                    "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/client/store/client.effect.ts:44:2"
+                                },
+                                "children": [
+                                    {
+                                        "name": "[evt] get clients",
+                                        "object": {
+                                            "from": "action with no or unhandled side effect",
+                                            "fileInfo": "-"
+                                        },
+                                        "children": []
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "[cmd] get clients",
+                "object": {
+                    "from": "cmdGetClientsComplete",
+                    "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/client/store/client.effect.ts:48:2"
+                },
+                "children": []
+            }
+        ]
+    },
+    {
+        "name": "[api] get clients",
+        "object": {
+            "from": "apiGetClients",
+            "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/client/store/client.effect.ts:32:2"
+        },
+        "children": [
+            {
+                "name": "[api x] get clients",
+                "object": {
+                    "from": "evtGetClientsError",
+                    "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/client/store/client.effect.ts:44:2"
+                },
+                "children": [
+                    {
+                        "name": "[evt] get clients",
+                        "object": {
+                            "from": "action with no or unhandled side effect",
+                            "fileInfo": "-"
+                        },
+                        "children": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Effects",
+        "children": [
+            {
+                "name": "[api v] get clients",
+                "object": {
+                    "from": "dataClients",
+                    "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/client/store/client.effect.ts:39:2"
+                },
+                "children": [
+                    {
+                        "name": "[data] clients",
+                        "object": {
+                            "from": "action with no or unhandled side effect",
+                            "fileInfo": "-"
+                        },
+                        "children": []
+                    }
+                ]
+            },
+            {
+                "name": "[api v] get clients",
+                "object": {
+                    "from": "evtGetClientsSuccess",
+                    "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/client/store/client.effect.ts:42:2"
+                },
+                "children": [
+                    {
+                        "name": "[evt] get clients",
+                        "object": {
+                            "from": "action with no or unhandled side effect",
+                            "fileInfo": "-"
+                        },
+                        "children": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "[api x] get clients",
+        "object": {
+            "from": "evtGetClientsError",
+            "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/client/store/client.effect.ts:44:2"
+        },
+        "children": [
+            {
+                "name": "[evt] get clients",
+                "object": {
+                    "from": "action with no or unhandled side effect",
+                    "fileInfo": "-"
+                },
+                "children": []
+            }
+        ]
+    },
+    {
+        "name": "Effects",
+        "children": [
+            {
+                "name": "[cmd] save client",
+                "object": {
+                    "from": "cmdSaveClientHandler",
+                    "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/client/store/client.effect.ts:63:2"
+                },
+                "children": [
+                    {
+                        "name": "[api] save client",
+                        "object": {
+                            "from": "apiSaveClient",
+                            "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/client/store/client.effect.ts:66:2"
+                        },
+                        "children": [
+                            {
+                                "name": "[api x] save client",
+                                "object": {
+                                    "from": "evtSaveClientError",
+                                    "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/client/store/client.effect.ts:78:2"
+                                },
+                                "children": [
+                                    {
+                                        "name": "[evt] save client",
+                                        "object": {
+                                            "from": "action with no or unhandled side effect",
+                                            "fileInfo": "-"
+                                        },
+                                        "children": []
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "[cmd] save client",
+                "object": {
+                    "from": "cmdSaveClientComplete",
+                    "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/client/store/client.effect.ts:82:2"
+                },
+                "children": []
+            }
+        ]
+    },
+    {
+        "name": "[api] save client",
+        "object": {
+            "from": "apiSaveClient",
+            "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/client/store/client.effect.ts:66:2"
+        },
+        "children": [
+            {
+                "name": "[api x] save client",
+                "object": {
+                    "from": "evtSaveClientError",
+                    "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/client/store/client.effect.ts:78:2"
+                },
+                "children": [
+                    {
+                        "name": "[evt] save client",
+                        "object": {
+                            "from": "action with no or unhandled side effect",
+                            "fileInfo": "-"
+                        },
+                        "children": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Effects",
+        "children": [
+            {
+                "name": "[api v] save client",
+                "object": {
+                    "from": "dataUpdateClients",
+                    "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/client/store/client.effect.ts:73:2"
+                },
+                "children": [
+                    {
+                        "name": "[data] update clients",
+                        "object": {
+                            "from": "action with no or unhandled side effect",
+                            "fileInfo": "-"
+                        },
+                        "children": []
+                    }
+                ]
+            },
+            {
+                "name": "[api v] save client",
+                "object": {
+                    "from": "evtSaveClientSuccess",
+                    "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/client/store/client.effect.ts:76:2"
+                },
+                "children": [
+                    {
+                        "name": "[evt] save client",
+                        "object": {
+                            "from": "action with no or unhandled side effect",
+                            "fileInfo": "-"
+                        },
+                        "children": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "[api x] save client",
+        "object": {
+            "from": "evtSaveClientError",
+            "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/client/store/client.effect.ts:78:2"
+        },
+        "children": [
+            {
+                "name": "[evt] save client",
+                "object": {
+                    "from": "action with no or unhandled side effect",
+                    "fileInfo": "-"
+                },
+                "children": []
+            }
+        ]
+    },
+    {
+        "name": "Effects",
+        "children": [
+            {
+                "name": "[cmd] save tasks",
+                "object": {
+                    "from": "cmdSaveTasksHandler",
+                    "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/task/store/task.effect.ts:26:2"
+                },
+                "children": [
+                    {
+                        "name": "[api] save tasks",
+                        "object": {
+                            "from": "saveTasksApi",
+                            "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/task/store/task.effect.ts:29:2"
+                        },
+                        "children": [
+                            {
+                                "name": "[api x] save tasks",
+                                "object": {
+                                    "from": "evtSaveTasksError",
+                                    "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/task/store/task.effect.ts:42:2"
+                                },
+                                "children": [
+                                    {
+                                        "name": "[evt] save tasks",
+                                        "object": {
+                                            "from": "action with no or unhandled side effect",
+                                            "fileInfo": "-"
+                                        },
+                                        "children": []
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "[cmd] save tasks",
+                "object": {
+                    "from": "cmdSaveTasksComplete",
+                    "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/task/store/task.effect.ts:45:2"
+                },
+                "children": []
+            }
+        ]
+    },
+    {
+        "name": "[api] save tasks",
+        "object": {
+            "from": "saveTasksApi",
+            "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/task/store/task.effect.ts:29:2"
+        },
+        "children": [
+            {
+                "name": "[api x] save tasks",
+                "object": {
+                    "from": "evtSaveTasksError",
+                    "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/task/store/task.effect.ts:42:2"
+                },
+                "children": [
+                    {
+                        "name": "[evt] save tasks",
+                        "object": {
+                            "from": "action with no or unhandled side effect",
+                            "fileInfo": "-"
+                        },
+                        "children": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Effects",
+        "children": [
+            {
+                "name": "[api v] save tasks",
+                "object": {
+                    "from": "dataSaveTasks",
+                    "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/task/store/task.effect.ts:36:2"
+                },
+                "children": [
+                    {
+                        "name": "[data] tasks",
+                        "object": {
+                            "from": "action with no or unhandled side effect",
+                            "fileInfo": "-"
+                        },
+                        "children": []
+                    }
+                ]
+            },
+            {
+                "name": "[api v] save tasks",
+                "object": {
+                    "from": "evtSaveTasksSuccess",
+                    "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/task/store/task.effect.ts:39:2"
+                },
+                "children": [
+                    {
+                        "name": "[evt] save tasks",
+                        "object": {
+                            "from": "action with no or unhandled side effect",
+                            "fileInfo": "-"
+                        },
+                        "children": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "[api x] save tasks",
+        "object": {
+            "from": "evtSaveTasksError",
+            "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/task/store/task.effect.ts:42:2"
+        },
+        "children": [
+            {
+                "name": "[evt] save tasks",
+                "object": {
+                    "from": "action with no or unhandled side effect",
+                    "fileInfo": "-"
+                },
+                "children": []
+            }
+        ]
+    },
+    {
+        "name": "Effects",
+        "children": [
+            {
+                "name": "[cmd] save team memberships",
+                "object": {
+                    "from": "cmdSaveTeamMembershipsHandler",
+                    "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/team/store/team.effect.ts:25:2"
+                },
+                "children": [
+                    {
+                        "name": "[api] save team memberships",
+                        "object": {
+                            "from": "saveTeamMembershipsApi",
+                            "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/team/store/team.effect.ts:28:2"
+                        },
+                        "children": [
+                            {
+                                "name": [
+                                    "[api x] save team memberships"
+                                ],
+                                "object": {
+                                    "from": "action with no or unhandled side effect",
+                                    "fileInfo": "-"
+                                },
+                                "children": []
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "[cmd] save team memberships",
+                "object": {
+                    "from": "cmdSaveTeamMembershipsComplete",
+                    "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/team/store/team.effect.ts:44:2"
+                },
+                "children": []
+            }
+        ]
+    },
+    {
+        "name": "[api] save team memberships",
+        "object": {
+            "from": "saveTeamMembershipsApi",
+            "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/team/store/team.effect.ts:28:2"
+        },
+        "children": [
+            {
+                "name": [
+                    "[api x] save team memberships"
+                ],
+                "object": {
+                    "from": "action with no or unhandled side effect",
+                    "fileInfo": "-"
+                },
+                "children": []
+            }
+        ]
+    },
+    {
+        "name": "Effects",
+        "children": [
+            {
+                "name": "[api v] save team memberships",
+                "object": {
+                    "from": "dataTeamMemberships",
+                    "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/team/store/team.effect.ts:35:2"
+                },
+                "children": [
+                    {
+                        "name": "[data] team memberships",
+                        "object": {
+                            "from": "action with no or unhandled side effect",
+                            "fileInfo": "-"
+                        },
+                        "children": []
+                    }
+                ]
+            },
+            {
+                "name": "[api v] save team memberships",
+                "object": {
+                    "from": "evtSaveTeamMembershipsSuccess",
+                    "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/team/store/team.effect.ts:38:2"
+                },
+                "children": [
+                    {
+                        "name": "[evt] save team memberships",
+                        "object": {
+                            "from": "action with no or unhandled side effect",
+                            "fileInfo": "-"
+                        },
+                        "children": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "[api x] save team memberships",
+        "object": {
+            "from": "evtSaveTeamMembershipsError",
+            "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/team/store/team.effect.ts:41:2"
+        },
+        "children": [
+            {
+                "name": "[evt] save team memberships",
+                "object": {
+                    "from": "action with no or unhandled side effect",
+                    "fileInfo": "-"
+                },
+                "children": []
+            }
+        ]
+    },
+    {
+        "object": {
+            "from": "action with no or unhandled side effect",
+            "fileInfo": "-"
+        },
+        "children": []
+    },
+    {
+        "name": "[nav] /projects handler",
+        "object": {
+            "from": "dataFilters",
+            "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/filter/store/filter.effect.ts:24:2"
+        },
+        "children": [
+            {
+                "name": "[data] set filters",
+                "object": {
+                    "from": "action with no or unhandled side effect",
+                    "fileInfo": "-"
+                },
+                "children": []
+            }
+        ]
+    },
+    {
+        "name": "Effects",
+        "children": [
+            {
+                "name": "[cmd] get projects",
+                "object": {
+                    "from": "cmdGetProjectHandler",
+                    "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/store/project.effect.ts:52:2"
+                },
+                "children": [
+                    {
+                        "name": "[enr] get projects for stored filters",
+                        "object": {
+                            "from": "fetchStoreFiltersEnricher",
+                            "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/store/project.effect.ts:55:2"
+                        },
+                        "children": [
+                            {
+                                "name": "[api] get projects",
+                                "object": {
+                                    "from": "fetchProjectsApi",
+                                    "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/store/project.effect.ts:62:2"
+                                },
+                                "children": [
+                                    {
+                                        "name": "[api x] get projects",
+                                        "object": {
+                                            "from": "evtProjectsError",
+                                            "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/store/project.effect.ts:74:2"
+                                        },
+                                        "children": [
+                                            {
+                                                "name": "[evt] get projects",
+                                                "object": {
+                                                    "from": "evtGetProjectHandler",
+                                                    "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/metric/store/metric.effect.ts:57:2"
+                                                },
+                                                "children": [
+                                                    {
+                                                        "name": "[hand] fetch metrics",
+                                                        "object": {
+                                                            "from": "fetchMetricSplitter",
+                                                            "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/metric/store/metric.effect.ts:60:2"
+                                                        },
+                                                        "children": [
+                                                            {
+                                                                "name": "[enr] get metrics for stored projects",
+                                                                "object": {
+                                                                    "from": "fetchStoreProjectEnricher",
+                                                                    "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/metric/store/metric.effect.ts:67:2"
+                                                                },
+                                                                "children": [
+                                                                    {
+                                                                        "name": "[api] get projects metrics",
+                                                                        "object": {
+                                                                            "from": "fetchProjectMetricsApi",
+                                                                            "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/metric/store/metric.effect.ts:73:2"
+                                                                        },
+                                                                        "children": [
+                                                                            {
+                                                                                "name": "[api v] get projects metrics",
+                                                                                "object": {
+                                                                                    "from": "dataProjectMetrics",
+                                                                                    "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/metric/store/metric.effect.ts:79:2"
+                                                                                },
+                                                                                "children": [
+                                                                                    {
+                                                                                        "name": "[data] projects metrics",
+                                                                                        "object": {
+                                                                                            "from": "action with no or unhandled side effect",
+                                                                                            "fileInfo": "-"
+                                                                                        },
+                                                                                        "children": []
+                                                                                    }
+                                                                                ]
+                                                                            },
+                                                                            {
+                                                                                "name": "[api v] get projects metrics",
+                                                                                "object": {
+                                                                                    "from": "evtProjectMetricsSuccess",
+                                                                                    "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/metric/store/metric.effect.ts:81:2"
+                                                                                },
+                                                                                "children": [
+                                                                                    {
+                                                                                        "name": "[evt] get projects metrics",
+                                                                                        "object": {
+                                                                                            "from": "action with no or unhandled side effect",
+                                                                                            "fileInfo": "-"
+                                                                                        },
+                                                                                        "children": []
+                                                                                    }
+                                                                                ]
+                                                                            }
+                                                                        ]
+                                                                    }
+                                                                ]
+                                                            },
+                                                            {
+                                                                "name": "[switch] get group metrics according to group by",
+                                                                "object": {
+                                                                    "from": "fetchGroupMetricDecider",
+                                                                    "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/metric/store/metric.effect.ts:88:2"
+                                                                },
+                                                                "children": []
+                                                            },
+                                                            {
+                                                                "name": "[switch] get group metrics according to group by",
+                                                                "object": {
+                                                                    "from": "evtGroupMetricsAggregator",
+                                                                    "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/metric/store/metric.effect.ts:159:2"
+                                                                },
+                                                                "children": [
+                                                                    {
+                                                                        "name": "[evt] get group metrics",
+                                                                        "object": {
+                                                                            "from": "action with no or unhandled side effect",
+                                                                            "fileInfo": "-"
+                                                                        },
+                                                                        "children": []
+                                                                    }
+                                                                ]
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "[cmd] get projects",
+                "object": {
+                    "from": "cmdGetProjectComplete",
+                    "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/store/project.effect.ts:78:2"
+                },
+                "children": []
+            }
+        ]
+    },
+    {
+        "name": "[enr] get projects for stored filters",
+        "object": {
+            "from": "fetchStoreFiltersEnricher",
+            "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/store/project.effect.ts:55:2"
+        },
+        "children": [
+            {
+                "name": "[api] get projects",
+                "object": {
+                    "from": "fetchProjectsApi",
+                    "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/store/project.effect.ts:62:2"
+                },
+                "children": [
+                    {
+                        "name": "[api x] get projects",
+                        "object": {
+                            "from": "evtProjectsError",
+                            "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/store/project.effect.ts:74:2"
+                        },
+                        "children": [
+                            {
+                                "name": "[evt] get projects",
+                                "object": {
+                                    "from": "evtGetProjectHandler",
+                                    "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/metric/store/metric.effect.ts:57:2"
+                                },
+                                "children": [
+                                    {
+                                        "name": "[hand] fetch metrics",
+                                        "object": {
+                                            "from": "fetchMetricSplitter",
+                                            "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/metric/store/metric.effect.ts:60:2"
+                                        },
+                                        "children": [
+                                            {
+                                                "name": "[enr] get metrics for stored projects",
+                                                "object": {
+                                                    "from": "fetchStoreProjectEnricher",
+                                                    "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/metric/store/metric.effect.ts:67:2"
+                                                },
+                                                "children": [
+                                                    {
+                                                        "name": "[api] get projects metrics",
+                                                        "object": {
+                                                            "from": "fetchProjectMetricsApi",
+                                                            "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/metric/store/metric.effect.ts:73:2"
+                                                        },
+                                                        "children": [
+                                                            {
+                                                                "name": "[api v] get projects metrics",
+                                                                "object": {
+                                                                    "from": "dataProjectMetrics",
+                                                                    "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/metric/store/metric.effect.ts:79:2"
+                                                                },
+                                                                "children": [
+                                                                    {
+                                                                        "name": "[data] projects metrics",
+                                                                        "object": {
+                                                                            "from": "action with no or unhandled side effect",
+                                                                            "fileInfo": "-"
+                                                                        },
+                                                                        "children": []
+                                                                    }
+                                                                ]
+                                                            },
+                                                            {
+                                                                "name": "[api v] get projects metrics",
+                                                                "object": {
+                                                                    "from": "evtProjectMetricsSuccess",
+                                                                    "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/metric/store/metric.effect.ts:81:2"
+                                                                },
+                                                                "children": [
+                                                                    {
+                                                                        "name": "[evt] get projects metrics",
+                                                                        "object": {
+                                                                            "from": "action with no or unhandled side effect",
+                                                                            "fileInfo": "-"
+                                                                        },
+                                                                        "children": []
+                                                                    }
+                                                                ]
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "name": "[switch] get group metrics according to group by",
+                                                "object": {
+                                                    "from": "fetchGroupMetricDecider",
+                                                    "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/metric/store/metric.effect.ts:88:2"
+                                                },
+                                                "children": []
+                                            },
+                                            {
+                                                "name": "[switch] get group metrics according to group by",
+                                                "object": {
+                                                    "from": "evtGroupMetricsAggregator",
+                                                    "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/metric/store/metric.effect.ts:159:2"
+                                                },
+                                                "children": [
+                                                    {
+                                                        "name": "[evt] get group metrics",
+                                                        "object": {
+                                                            "from": "action with no or unhandled side effect",
+                                                            "fileInfo": "-"
+                                                        },
+                                                        "children": []
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "[api] get projects",
+        "object": {
+            "from": "fetchProjectsApi",
+            "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/store/project.effect.ts:62:2"
+        },
+        "children": [
+            {
+                "name": "[api x] get projects",
+                "object": {
+                    "from": "evtProjectsError",
+                    "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/store/project.effect.ts:74:2"
+                },
+                "children": [
+                    {
+                        "name": "[evt] get projects",
+                        "object": {
+                            "from": "evtGetProjectHandler",
+                            "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/metric/store/metric.effect.ts:57:2"
+                        },
+                        "children": [
+                            {
+                                "name": "[hand] fetch metrics",
+                                "object": {
+                                    "from": "fetchMetricSplitter",
+                                    "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/metric/store/metric.effect.ts:60:2"
+                                },
+                                "children": [
+                                    {
+                                        "name": "[enr] get metrics for stored projects",
+                                        "object": {
+                                            "from": "fetchStoreProjectEnricher",
+                                            "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/metric/store/metric.effect.ts:67:2"
+                                        },
+                                        "children": [
+                                            {
+                                                "name": "[api] get projects metrics",
+                                                "object": {
+                                                    "from": "fetchProjectMetricsApi",
+                                                    "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/metric/store/metric.effect.ts:73:2"
+                                                },
+                                                "children": [
+                                                    {
+                                                        "name": "[api v] get projects metrics",
+                                                        "object": {
+                                                            "from": "dataProjectMetrics",
+                                                            "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/metric/store/metric.effect.ts:79:2"
+                                                        },
+                                                        "children": [
+                                                            {
+                                                                "name": "[data] projects metrics",
+                                                                "object": {
+                                                                    "from": "action with no or unhandled side effect",
+                                                                    "fileInfo": "-"
+                                                                },
+                                                                "children": []
+                                                            }
+                                                        ]
+                                                    },
+                                                    {
+                                                        "name": "[api v] get projects metrics",
+                                                        "object": {
+                                                            "from": "evtProjectMetricsSuccess",
+                                                            "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/metric/store/metric.effect.ts:81:2"
+                                                        },
+                                                        "children": [
+                                                            {
+                                                                "name": "[evt] get projects metrics",
+                                                                "object": {
+                                                                    "from": "action with no or unhandled side effect",
+                                                                    "fileInfo": "-"
+                                                                },
+                                                                "children": []
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "name": "[switch] get group metrics according to group by",
+                                        "object": {
+                                            "from": "fetchGroupMetricDecider",
+                                            "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/metric/store/metric.effect.ts:88:2"
+                                        },
+                                        "children": []
+                                    },
+                                    {
+                                        "name": "[switch] get group metrics according to group by",
+                                        "object": {
+                                            "from": "evtGroupMetricsAggregator",
+                                            "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/metric/store/metric.effect.ts:159:2"
+                                        },
+                                        "children": [
+                                            {
+                                                "name": "[evt] get group metrics",
+                                                "object": {
+                                                    "from": "action with no or unhandled side effect",
+                                                    "fileInfo": "-"
+                                                },
+                                                "children": []
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Effects",
+        "children": [
+            {
+                "name": "[api v] get projects",
+                "object": {
+                    "from": "dataProjects",
+                    "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/store/project.effect.ts:69:2"
+                },
+                "children": [
+                    {
+                        "name": "[data] projects",
+                        "object": {
+                            "from": "action with no or unhandled side effect",
+                            "fileInfo": "-"
+                        },
+                        "children": []
+                    }
+                ]
+            },
+            {
+                "name": "[api v] get projects",
+                "object": {
+                    "from": "evtProjectsSuccess",
+                    "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/store/project.effect.ts:72:2"
+                },
+                "children": [
+                    {
+                        "name": "[evt] get projects",
+                        "object": {
+                            "from": "evtGetProjectHandler",
+                            "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/metric/store/metric.effect.ts:57:2"
+                        },
+                        "children": [
+                            {
+                                "name": "[hand] fetch metrics",
+                                "object": {
+                                    "from": "fetchMetricSplitter",
+                                    "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/metric/store/metric.effect.ts:60:2"
+                                },
+                                "children": [
+                                    {
+                                        "name": "[enr] get metrics for stored projects",
+                                        "object": {
+                                            "from": "fetchStoreProjectEnricher",
+                                            "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/metric/store/metric.effect.ts:67:2"
+                                        },
+                                        "children": [
+                                            {
+                                                "name": "[api] get projects metrics",
+                                                "object": {
+                                                    "from": "fetchProjectMetricsApi",
+                                                    "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/metric/store/metric.effect.ts:73:2"
+                                                },
+                                                "children": [
+                                                    {
+                                                        "name": "[api v] get projects metrics",
+                                                        "object": {
+                                                            "from": "dataProjectMetrics",
+                                                            "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/metric/store/metric.effect.ts:79:2"
+                                                        },
+                                                        "children": [
+                                                            {
+                                                                "name": "[data] projects metrics",
+                                                                "object": {
+                                                                    "from": "action with no or unhandled side effect",
+                                                                    "fileInfo": "-"
+                                                                },
+                                                                "children": []
+                                                            }
+                                                        ]
+                                                    },
+                                                    {
+                                                        "name": "[api v] get projects metrics",
+                                                        "object": {
+                                                            "from": "evtProjectMetricsSuccess",
+                                                            "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/metric/store/metric.effect.ts:81:2"
+                                                        },
+                                                        "children": [
+                                                            {
+                                                                "name": "[evt] get projects metrics",
+                                                                "object": {
+                                                                    "from": "action with no or unhandled side effect",
+                                                                    "fileInfo": "-"
+                                                                },
+                                                                "children": []
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "name": "[switch] get group metrics according to group by",
+                                        "object": {
+                                            "from": "fetchGroupMetricDecider",
+                                            "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/metric/store/metric.effect.ts:88:2"
+                                        },
+                                        "children": []
+                                    },
+                                    {
+                                        "name": "[switch] get group metrics according to group by",
+                                        "object": {
+                                            "from": "evtGroupMetricsAggregator",
+                                            "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/metric/store/metric.effect.ts:159:2"
+                                        },
+                                        "children": [
+                                            {
+                                                "name": "[evt] get group metrics",
+                                                "object": {
+                                                    "from": "action with no or unhandled side effect",
+                                                    "fileInfo": "-"
+                                                },
+                                                "children": []
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "[api x] get projects",
+        "object": {
+            "from": "evtProjectsError",
+            "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/store/project.effect.ts:74:2"
+        },
+        "children": [
+            {
+                "name": "[evt] get projects",
+                "object": {
+                    "from": "evtGetProjectHandler",
+                    "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/metric/store/metric.effect.ts:57:2"
+                },
+                "children": [
+                    {
+                        "name": "[hand] fetch metrics",
+                        "object": {
+                            "from": "fetchMetricSplitter",
+                            "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/metric/store/metric.effect.ts:60:2"
+                        },
+                        "children": [
+                            {
+                                "name": "[enr] get metrics for stored projects",
+                                "object": {
+                                    "from": "fetchStoreProjectEnricher",
+                                    "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/metric/store/metric.effect.ts:67:2"
+                                },
+                                "children": [
+                                    {
+                                        "name": "[api] get projects metrics",
+                                        "object": {
+                                            "from": "fetchProjectMetricsApi",
+                                            "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/metric/store/metric.effect.ts:73:2"
+                                        },
+                                        "children": [
+                                            {
+                                                "name": "[api v] get projects metrics",
+                                                "object": {
+                                                    "from": "dataProjectMetrics",
+                                                    "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/metric/store/metric.effect.ts:79:2"
+                                                },
+                                                "children": [
+                                                    {
+                                                        "name": "[data] projects metrics",
+                                                        "object": {
+                                                            "from": "action with no or unhandled side effect",
+                                                            "fileInfo": "-"
+                                                        },
+                                                        "children": []
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "name": "[api v] get projects metrics",
+                                                "object": {
+                                                    "from": "evtProjectMetricsSuccess",
+                                                    "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/metric/store/metric.effect.ts:81:2"
+                                                },
+                                                "children": [
+                                                    {
+                                                        "name": "[evt] get projects metrics",
+                                                        "object": {
+                                                            "from": "action with no or unhandled side effect",
+                                                            "fileInfo": "-"
+                                                        },
+                                                        "children": []
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "[switch] get group metrics according to group by",
+                                "object": {
+                                    "from": "fetchGroupMetricDecider",
+                                    "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/metric/store/metric.effect.ts:88:2"
+                                },
+                                "children": []
+                            },
+                            {
+                                "name": "[switch] get group metrics according to group by",
+                                "object": {
+                                    "from": "evtGroupMetricsAggregator",
+                                    "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/metric/store/metric.effect.ts:159:2"
+                                },
+                                "children": [
+                                    {
+                                        "name": "[evt] get group metrics",
+                                        "object": {
+                                            "from": "action with no or unhandled side effect",
+                                            "fileInfo": "-"
+                                        },
+                                        "children": []
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Effects",
+        "children": [
+            {
+                "name": "[cmd] get project details",
+                "object": {
+                    "from": "cmdGetProjectDetailsHandler",
+                    "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/store/project.effect.ts:95:2"
+                },
+                "children": [
+                    {
+                        "name": "[api] get project details",
+                        "object": {
+                            "from": "getProjectDetailsDetails",
+                            "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/store/project.effect.ts:98:2"
+                        },
+                        "children": [
+                            {
+                                "name": "[api x] get project details",
+                                "object": {
+                                    "from": "evtGetProjectDetailsError",
+                                    "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/store/project.effect.ts:110:2"
+                                },
+                                "children": [
+                                    {
+                                        "name": "[evt] get project details",
+                                        "object": {
+                                            "from": "action with no or unhandled side effect",
+                                            "fileInfo": "-"
+                                        },
+                                        "children": []
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "[cmd] get project details",
+                "object": {
+                    "from": "cmdGetProjectDetailsComplete",
+                    "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/store/project.effect.ts:114:2"
+                },
+                "children": []
+            }
+        ]
+    },
+    {
+        "name": "[api] get project details",
+        "object": {
+            "from": "getProjectDetailsDetails",
+            "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/store/project.effect.ts:98:2"
+        },
+        "children": [
+            {
+                "name": "[api x] get project details",
+                "object": {
+                    "from": "evtGetProjectDetailsError",
+                    "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/store/project.effect.ts:110:2"
+                },
+                "children": [
+                    {
+                        "name": "[evt] get project details",
+                        "object": {
+                            "from": "action with no or unhandled side effect",
+                            "fileInfo": "-"
+                        },
+                        "children": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Effects",
+        "children": [
+            {
+                "name": "[api v] get project details",
+                "object": {
+                    "from": "dataGetProjectDetails",
+                    "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/store/project.effect.ts:105:2"
+                },
+                "children": [
+                    {
+                        "name": "[data] enrich projects",
+                        "object": {
+                            "from": "action with no or unhandled side effect",
+                            "fileInfo": "-"
+                        },
+                        "children": []
+                    }
+                ]
+            },
+            {
+                "name": "[api v] get project details",
+                "object": {
+                    "from": "evtGetProjectDetailsSuccess",
+                    "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/store/project.effect.ts:108:2"
+                },
+                "children": [
+                    {
+                        "name": "[evt] get project details",
+                        "object": {
+                            "from": "action with no or unhandled side effect",
+                            "fileInfo": "-"
+                        },
+                        "children": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "[api x] get project details",
+        "object": {
+            "from": "evtGetProjectDetailsError",
+            "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/store/project.effect.ts:110:2"
+        },
+        "children": [
+            {
+                "name": "[evt] get project details",
+                "object": {
+                    "from": "action with no or unhandled side effect",
+                    "fileInfo": "-"
+                },
+                "children": []
+            }
+        ]
+    },
+    {
+        "name": "Effects",
+        "children": [
+            {
+                "name": "[cmd] update project",
+                "object": {
+                    "from": "cmdUpdateProjectHandler",
+                    "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/store/project.effect.ts:130:2"
+                },
+                "children": [
+                    {
+                        "name": "[api] update project",
+                        "object": {
+                            "from": "updateProjectApi",
+                            "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/store/project.effect.ts:133:2"
+                        },
+                        "children": [
+                            {
+                                "name": [
+                                    "[api x] update project"
+                                ],
+                                "object": {
+                                    "from": "action with no or unhandled side effect",
+                                    "fileInfo": "-"
+                                },
+                                "children": []
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "[cmd] update project",
+                "object": {
+                    "from": "cmdUpdatetProjectComplete",
+                    "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/store/project.effect.ts:150:2"
+                },
+                "children": []
+            }
+        ]
+    },
+    {
+        "name": "[api] update project",
+        "object": {
+            "from": "updateProjectApi",
+            "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/store/project.effect.ts:133:2"
+        },
+        "children": [
+            {
+                "name": [
+                    "[api x] update project"
+                ],
+                "object": {
+                    "from": "action with no or unhandled side effect",
+                    "fileInfo": "-"
+                },
+                "children": []
+            }
+        ]
+    },
+    {
+        "name": "Effects",
+        "children": [
+            {
+                "name": "[api v] update project",
+                "object": {
+                    "from": "dataUpdateProject",
+                    "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/store/project.effect.ts:141:2"
+                },
+                "children": [
+                    {
+                        "name": "[data] update projects",
+                        "object": {
+                            "from": "action with no or unhandled side effect",
+                            "fileInfo": "-"
+                        },
+                        "children": []
+                    }
+                ]
+            },
+            {
+                "name": "[api v] update project",
+                "object": {
+                    "from": "evtUpdateProjectSuccess",
+                    "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/store/project.effect.ts:144:2"
+                },
+                "children": [
+                    {
+                        "name": "[evt] update project",
+                        "object": {
+                            "from": "action with no or unhandled side effect",
+                            "fileInfo": "-"
+                        },
+                        "children": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "[api x] update project",
+        "object": {
+            "from": "evtUpdateProjectError",
+            "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/store/project.effect.ts:146:2"
+        },
+        "children": [
+            {
+                "name": "[evt] update project",
+                "object": {
+                    "from": "action with no or unhandled side effect",
+                    "fileInfo": "-"
+                },
+                "children": []
+            }
+        ]
+    },
+    {
+        "name": "Effects",
+        "children": [
+            {
+                "name": "[cmd] update project end date",
+                "object": {
+                    "from": "cmdUpdateProjectEndDateHandler",
+                    "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/store/project.effect.ts:163:2"
+                },
+                "children": [
+                    {
+                        "name": "[norm] update project end date",
+                        "object": {
+                            "from": "normUpdateProjectEndDate",
+                            "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/store/project.effect.ts:165:2"
+                        },
+                        "children": [
+                            {
+                                "name": "[api] update project",
+                                "object": {
+                                    "from": "updateProjectApi",
+                                    "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/store/project.effect.ts:133:2"
+                                },
+                                "children": [
+                                    {
+                                        "name": [
+                                            "[api x] update project"
+                                        ],
+                                        "object": {
+                                            "from": "action with no or unhandled side effect",
+                                            "fileInfo": "-"
+                                        },
+                                        "children": []
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "[cmd] update project end date",
+                "object": {
+                    "from": "cmdUpdatetProjectEndDateComplete",
+                    "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/store/project.effect.ts:168:2"
+                },
+                "children": []
+            }
+        ]
+    },
+    {
+        "name": "[norm] update project end date",
+        "object": {
+            "from": "normUpdateProjectEndDate",
+            "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/store/project.effect.ts:165:2"
+        },
+        "children": [
+            {
+                "name": "[api] update project",
+                "object": {
+                    "from": "updateProjectApi",
+                    "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/store/project.effect.ts:133:2"
+                },
+                "children": [
+                    {
+                        "name": [
+                            "[api x] update project"
+                        ],
+                        "object": {
+                            "from": "action with no or unhandled side effect",
+                            "fileInfo": "-"
+                        },
+                        "children": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Effects",
+        "children": [
+            {
+                "name": "[cmd] project workflow",
+                "object": {
+                    "from": "cmdWorkflowProjectHandler",
+                    "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/store/project.effect.ts:182:2"
+                },
+                "children": [
+                    {
+                        "name": "[enr] workflow operation",
+                        "object": {
+                            "from": "workflowProjectEnricher",
+                            "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/store/project.effect.ts:185:2"
+                        },
+                        "children": [
+                            {
+                                "name": "[api] workflow project",
+                                "object": {
+                                    "from": "workflowProjectApi",
+                                    "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/store/project.effect.ts:193:2"
+                                },
+                                "children": [
+                                    {
+                                        "name": [
+                                            "[api x] workflow project"
+                                        ],
+                                        "object": {
+                                            "from": "action with no or unhandled side effect",
+                                            "fileInfo": "-"
+                                        },
+                                        "children": []
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "[cmd] project workflow",
+                "object": {
+                    "from": "cmdWorkflowProjectComplete",
+                    "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/store/project.effect.ts:212:2"
+                },
+                "children": []
+            }
+        ]
+    },
+    {
+        "name": "[enr] workflow operation",
+        "object": {
+            "from": "workflowProjectEnricher",
+            "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/store/project.effect.ts:185:2"
+        },
+        "children": [
+            {
+                "name": "[api] workflow project",
+                "object": {
+                    "from": "workflowProjectApi",
+                    "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/store/project.effect.ts:193:2"
+                },
+                "children": [
+                    {
+                        "name": [
+                            "[api x] workflow project"
+                        ],
+                        "object": {
+                            "from": "action with no or unhandled side effect",
+                            "fileInfo": "-"
+                        },
+                        "children": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "[api] workflow project",
+        "object": {
+            "from": "workflowProjectApi",
+            "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/store/project.effect.ts:193:2"
+        },
+        "children": [
+            {
+                "name": [
+                    "[api x] workflow project"
+                ],
+                "object": {
+                    "from": "action with no or unhandled side effect",
+                    "fileInfo": "-"
+                },
+                "children": []
+            }
+        ]
+    },
+    {
+        "name": "Effects",
+        "children": [
+            {
+                "name": "[api v] workflow project",
+                "object": {
+                    "from": "dataUpdateProjectAfterWorkflow",
+                    "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/store/project.effect.ts:202:2"
+                },
+                "children": [
+                    {
+                        "name": "[data] update projects",
+                        "object": {
+                            "from": "action with no or unhandled side effect",
+                            "fileInfo": "-"
+                        },
+                        "children": []
+                    }
+                ]
+            },
+            {
+                "name": "[api v] workflow project",
+                "object": {
+                    "from": "evtWorkflowProjectSuccess",
+                    "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/store/project.effect.ts:207:2"
+                },
+                "children": [
+                    {
+                        "name": "[evt] workflow project",
+                        "object": {
+                            "from": "action with no or unhandled side effect",
+                            "fileInfo": "-"
+                        },
+                        "children": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "[api x] workflow project",
+        "object": {
+            "from": "evtWorkflowProjectError",
+            "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/store/project.effect.ts:209:2"
+        },
+        "children": [
+            {
+                "name": "[evt] workflow project",
+                "object": {
+                    "from": "action with no or unhandled side effect",
+                    "fileInfo": "-"
+                },
+                "children": []
+            }
+        ]
+    },
+    {
+        "name": "Effects",
+        "children": [
+            {
+                "name": "[cmd] get metrics",
+                "object": {
+                    "from": "cmdGeMetricHandler",
+                    "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/metric/store/metric.effect.ts:54:2"
+                },
+                "children": [
+                    {
+                        "name": "[hand] fetch metrics",
+                        "object": {
+                            "from": "fetchMetricSplitter",
+                            "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/metric/store/metric.effect.ts:60:2"
+                        },
+                        "children": [
+                            {
+                                "name": "[enr] get metrics for stored projects",
+                                "object": {
+                                    "from": "fetchStoreProjectEnricher",
+                                    "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/metric/store/metric.effect.ts:67:2"
+                                },
+                                "children": [
+                                    {
+                                        "name": "[api] get projects metrics",
+                                        "object": {
+                                            "from": "fetchProjectMetricsApi",
+                                            "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/metric/store/metric.effect.ts:73:2"
+                                        },
+                                        "children": [
+                                            {
+                                                "name": "[api v] get projects metrics",
+                                                "object": {
+                                                    "from": "dataProjectMetrics",
+                                                    "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/metric/store/metric.effect.ts:79:2"
+                                                },
+                                                "children": [
+                                                    {
+                                                        "name": "[data] projects metrics",
+                                                        "object": {
+                                                            "from": "action with no or unhandled side effect",
+                                                            "fileInfo": "-"
+                                                        },
+                                                        "children": []
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "name": "[api v] get projects metrics",
+                                                "object": {
+                                                    "from": "evtProjectMetricsSuccess",
+                                                    "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/metric/store/metric.effect.ts:81:2"
+                                                },
+                                                "children": [
+                                                    {
+                                                        "name": "[evt] get projects metrics",
+                                                        "object": {
+                                                            "from": "action with no or unhandled side effect",
+                                                            "fileInfo": "-"
+                                                        },
+                                                        "children": []
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "[switch] get group metrics according to group by",
+                                "object": {
+                                    "from": "fetchGroupMetricDecider",
+                                    "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/metric/store/metric.effect.ts:88:2"
+                                },
+                                "children": []
+                            },
+                            {
+                                "name": "[switch] get group metrics according to group by",
+                                "object": {
+                                    "from": "evtGroupMetricsAggregator",
+                                    "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/metric/store/metric.effect.ts:159:2"
+                                },
+                                "children": [
+                                    {
+                                        "name": "[evt] get group metrics",
+                                        "object": {
+                                            "from": "action with no or unhandled side effect",
+                                            "fileInfo": "-"
+                                        },
+                                        "children": []
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "[cmd] get metrics",
+                "object": {
+                    "from": "cmdGetProjectComplete",
+                    "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/metric/store/metric.effect.ts:168:2"
+                },
+                "children": []
+            }
+        ]
+    },
+    {
+        "name": "[evt] get projects",
+        "object": {
+            "from": "evtGetProjectHandler",
+            "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/metric/store/metric.effect.ts:57:2"
+        },
+        "children": [
+            {
+                "name": "[hand] fetch metrics",
+                "object": {
+                    "from": "fetchMetricSplitter",
+                    "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/metric/store/metric.effect.ts:60:2"
+                },
+                "children": [
+                    {
+                        "name": "[enr] get metrics for stored projects",
+                        "object": {
+                            "from": "fetchStoreProjectEnricher",
+                            "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/metric/store/metric.effect.ts:67:2"
+                        },
+                        "children": [
+                            {
+                                "name": "[api] get projects metrics",
+                                "object": {
+                                    "from": "fetchProjectMetricsApi",
+                                    "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/metric/store/metric.effect.ts:73:2"
+                                },
+                                "children": [
+                                    {
+                                        "name": "[api v] get projects metrics",
+                                        "object": {
+                                            "from": "dataProjectMetrics",
+                                            "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/metric/store/metric.effect.ts:79:2"
+                                        },
+                                        "children": [
+                                            {
+                                                "name": "[data] projects metrics",
+                                                "object": {
+                                                    "from": "action with no or unhandled side effect",
+                                                    "fileInfo": "-"
+                                                },
+                                                "children": []
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "name": "[api v] get projects metrics",
+                                        "object": {
+                                            "from": "evtProjectMetricsSuccess",
+                                            "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/metric/store/metric.effect.ts:81:2"
+                                        },
+                                        "children": [
+                                            {
+                                                "name": "[evt] get projects metrics",
+                                                "object": {
+                                                    "from": "action with no or unhandled side effect",
+                                                    "fileInfo": "-"
+                                                },
+                                                "children": []
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "name": "[switch] get group metrics according to group by",
+                        "object": {
+                            "from": "fetchGroupMetricDecider",
+                            "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/metric/store/metric.effect.ts:88:2"
+                        },
+                        "children": []
+                    },
+                    {
+                        "name": "[switch] get group metrics according to group by",
+                        "object": {
+                            "from": "evtGroupMetricsAggregator",
+                            "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/metric/store/metric.effect.ts:159:2"
+                        },
+                        "children": [
+                            {
+                                "name": "[evt] get group metrics",
+                                "object": {
+                                    "from": "action with no or unhandled side effect",
+                                    "fileInfo": "-"
+                                },
+                                "children": []
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "[hand] fetch metrics",
+        "object": {
+            "from": "fetchMetricSplitter",
+            "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/metric/store/metric.effect.ts:60:2"
+        },
+        "children": [
+            {
+                "name": "[enr] get metrics for stored projects",
+                "object": {
+                    "from": "fetchStoreProjectEnricher",
+                    "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/metric/store/metric.effect.ts:67:2"
+                },
+                "children": [
+                    {
+                        "name": "[api] get projects metrics",
+                        "object": {
+                            "from": "fetchProjectMetricsApi",
+                            "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/metric/store/metric.effect.ts:73:2"
+                        },
+                        "children": [
+                            {
+                                "name": "[api v] get projects metrics",
+                                "object": {
+                                    "from": "dataProjectMetrics",
+                                    "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/metric/store/metric.effect.ts:79:2"
+                                },
+                                "children": [
+                                    {
+                                        "name": "[data] projects metrics",
+                                        "object": {
+                                            "from": "action with no or unhandled side effect",
+                                            "fileInfo": "-"
+                                        },
+                                        "children": []
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "[api v] get projects metrics",
+                                "object": {
+                                    "from": "evtProjectMetricsSuccess",
+                                    "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/metric/store/metric.effect.ts:81:2"
+                                },
+                                "children": [
+                                    {
+                                        "name": "[evt] get projects metrics",
+                                        "object": {
+                                            "from": "action with no or unhandled side effect",
+                                            "fileInfo": "-"
+                                        },
+                                        "children": []
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "[switch] get group metrics according to group by",
+                "object": {
+                    "from": "fetchGroupMetricDecider",
+                    "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/metric/store/metric.effect.ts:88:2"
+                },
+                "children": []
+            },
+            {
+                "name": "[switch] get group metrics according to group by",
+                "object": {
+                    "from": "evtGroupMetricsAggregator",
+                    "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/metric/store/metric.effect.ts:159:2"
+                },
+                "children": [
+                    {
+                        "name": "[evt] get group metrics",
+                        "object": {
+                            "from": "action with no or unhandled side effect",
+                            "fileInfo": "-"
+                        },
+                        "children": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "[enr] get metrics for stored projects",
+        "object": {
+            "from": "fetchStoreProjectEnricher",
+            "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/metric/store/metric.effect.ts:67:2"
+        },
+        "children": [
+            {
+                "name": "[api] get projects metrics",
+                "object": {
+                    "from": "fetchProjectMetricsApi",
+                    "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/metric/store/metric.effect.ts:73:2"
+                },
+                "children": [
+                    {
+                        "name": "[api v] get projects metrics",
+                        "object": {
+                            "from": "dataProjectMetrics",
+                            "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/metric/store/metric.effect.ts:79:2"
+                        },
+                        "children": [
+                            {
+                                "name": "[data] projects metrics",
+                                "object": {
+                                    "from": "action with no or unhandled side effect",
+                                    "fileInfo": "-"
+                                },
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "name": "[api v] get projects metrics",
+                        "object": {
+                            "from": "evtProjectMetricsSuccess",
+                            "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/metric/store/metric.effect.ts:81:2"
+                        },
+                        "children": [
+                            {
+                                "name": "[evt] get projects metrics",
+                                "object": {
+                                    "from": "action with no or unhandled side effect",
+                                    "fileInfo": "-"
+                                },
+                                "children": []
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "[api] get projects metrics",
+        "object": {
+            "from": "fetchProjectMetricsApi",
+            "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/metric/store/metric.effect.ts:73:2"
+        },
+        "children": [
+            {
+                "name": "[api v] get projects metrics",
+                "object": {
+                    "from": "dataProjectMetrics",
+                    "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/metric/store/metric.effect.ts:79:2"
+                },
+                "children": [
+                    {
+                        "name": "[data] projects metrics",
+                        "object": {
+                            "from": "action with no or unhandled side effect",
+                            "fileInfo": "-"
+                        },
+                        "children": []
+                    }
+                ]
+            },
+            {
+                "name": "[api v] get projects metrics",
+                "object": {
+                    "from": "evtProjectMetricsSuccess",
+                    "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/metric/store/metric.effect.ts:81:2"
+                },
+                "children": [
+                    {
+                        "name": "[evt] get projects metrics",
+                        "object": {
+                            "from": "action with no or unhandled side effect",
+                            "fileInfo": "-"
+                        },
+                        "children": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Effects",
+        "children": [
+            {
+                "name": "[api v] get projects metrics",
+                "object": {
+                    "from": "dataProjectMetrics",
+                    "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/metric/store/metric.effect.ts:79:2"
+                },
+                "children": [
+                    {
+                        "name": "[data] projects metrics",
+                        "object": {
+                            "from": "action with no or unhandled side effect",
+                            "fileInfo": "-"
+                        },
+                        "children": []
+                    }
+                ]
+            },
+            {
+                "name": "[api v] get projects metrics",
+                "object": {
+                    "from": "evtProjectMetricsSuccess",
+                    "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/metric/store/metric.effect.ts:81:2"
+                },
+                "children": [
+                    {
+                        "name": "[evt] get projects metrics",
+                        "object": {
+                            "from": "action with no or unhandled side effect",
+                            "fileInfo": "-"
+                        },
+                        "children": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "[api x] get projects metrics",
+        "object": {
+            "from": "evtProjectMetricsError",
+            "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/metric/store/metric.effect.ts:83:2"
+        },
+        "children": [
+            {
+                "name": "[evt] get projects metrics",
+                "object": {
+                    "from": "action with no or unhandled side effect",
+                    "fileInfo": "-"
+                },
+                "children": []
+            }
+        ]
+    },
+    {
+        "name": "Effects",
+        "children": [
+            {
+                "name": "[switch] get group metrics according to group by",
+                "object": {
+                    "from": "fetchGroupMetricDecider",
+                    "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/metric/store/metric.effect.ts:88:2"
+                },
+                "children": []
+            },
+            {
+                "name": "[switch] get group metrics according to group by",
+                "object": {
+                    "from": "evtGroupMetricsAggregator",
+                    "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/metric/store/metric.effect.ts:159:2"
+                },
+                "children": [
+                    {
+                        "name": "[evt] get group metrics",
+                        "object": {
+                            "from": "action with no or unhandled side effect",
+                            "fileInfo": "-"
+                        },
+                        "children": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "[hand] no group metrics",
+        "object": {
+            "from": "evtNoMetricSuccess",
+            "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/metric/store/metric.effect.ts:104:2"
+        },
+        "children": [
+            {
+                "name": "[evt] get no metrics",
+                "object": {
+                    "from": "action with no or unhandled side effect",
+                    "fileInfo": "-"
+                },
+                "children": []
+            }
+        ]
+    },
+    {
+        "name": "[enr] get metrics for stored cliens",
+        "object": {
+            "from": "fetchStoreClientEnricher",
+            "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/metric/store/metric.effect.ts:108:2"
+        },
+        "children": [
+            {
+                "name": "[api] get clients metrics",
+                "object": {
+                    "from": "fetchClientMetricsApi",
+                    "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/metric/store/metric.effect.ts:119:2"
+                },
+                "children": [
+                    {
+                        "name": "[api x] get clients metrics",
+                        "object": {
+                            "from": "evtClientMetricsError",
+                            "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/metric/store/metric.effect.ts:129:2"
+                        },
+                        "children": [
+                            {
+                                "name": "[evt] get client metrics",
+                                "object": {
+                                    "from": "action with no or unhandled side effect",
+                                    "fileInfo": "-"
+                                },
+                                "children": []
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "[api] get clients metrics",
+        "object": {
+            "from": "fetchClientMetricsApi",
+            "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/metric/store/metric.effect.ts:119:2"
+        },
+        "children": [
+            {
+                "name": "[api x] get clients metrics",
+                "object": {
+                    "from": "evtClientMetricsError",
+                    "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/metric/store/metric.effect.ts:129:2"
+                },
+                "children": [
+                    {
+                        "name": "[evt] get client metrics",
+                        "object": {
+                            "from": "action with no or unhandled side effect",
+                            "fileInfo": "-"
+                        },
+                        "children": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Effects",
+        "children": [
+            {
+                "name": "[api v] get clients metrics",
+                "object": {
+                    "from": "dataClientMetrics",
+                    "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/metric/store/metric.effect.ts:125:2"
+                },
+                "children": [
+                    {
+                        "name": "[data] clients metrics",
+                        "object": {
+                            "from": "action with no or unhandled side effect",
+                            "fileInfo": "-"
+                        },
+                        "children": []
+                    }
+                ]
+            },
+            {
+                "name": "[api v] get clients metrics",
+                "object": {
+                    "from": "evtClientMetricsSuccess",
+                    "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/metric/store/metric.effect.ts:127:2"
+                },
+                "children": [
+                    {
+                        "name": "[evt] get client metrics",
+                        "object": {
+                            "from": "action with no or unhandled side effect",
+                            "fileInfo": "-"
+                        },
+                        "children": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "[api x] get clients metrics",
+        "object": {
+            "from": "evtClientMetricsError",
+            "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/metric/store/metric.effect.ts:129:2"
+        },
+        "children": [
+            {
+                "name": "[evt] get client metrics",
+                "object": {
+                    "from": "action with no or unhandled side effect",
+                    "fileInfo": "-"
+                },
+                "children": []
+            }
+        ]
+    },
+    {
+        "name": "[enr] get metrics for stored project leads",
+        "object": {
+            "from": "fetchStoreProjectLeadEnricher",
+            "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/metric/store/metric.effect.ts:134:2"
+        },
+        "children": [
+            {
+                "name": "[api] get project lead metrics",
+                "object": {
+                    "from": "fetchProjectLeadMetricsApi",
+                    "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/metric/store/metric.effect.ts:145:2"
+                },
+                "children": [
+                    {
+                        "name": "[api x] get project lead metrics",
+                        "object": {
+                            "from": "evtProjectLeadMetricsError",
+                            "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/metric/store/metric.effect.ts:155:2"
+                        },
+                        "children": [
+                            {
+                                "name": "[evt] get projectlead metrics",
+                                "object": {
+                                    "from": "action with no or unhandled side effect",
+                                    "fileInfo": "-"
+                                },
+                                "children": []
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "[api] get project lead metrics",
+        "object": {
+            "from": "fetchProjectLeadMetricsApi",
+            "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/metric/store/metric.effect.ts:145:2"
+        },
+        "children": [
+            {
+                "name": "[api x] get project lead metrics",
+                "object": {
+                    "from": "evtProjectLeadMetricsError",
+                    "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/metric/store/metric.effect.ts:155:2"
+                },
+                "children": [
+                    {
+                        "name": "[evt] get projectlead metrics",
+                        "object": {
+                            "from": "action with no or unhandled side effect",
+                            "fileInfo": "-"
+                        },
+                        "children": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Effects",
+        "children": [
+            {
+                "name": "[api v] get project lead metrics",
+                "object": {
+                    "from": "dataProjectLeadMetrics",
+                    "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/metric/store/metric.effect.ts:151:2"
+                },
+                "children": [
+                    {
+                        "name": "[data] project lead metrics",
+                        "object": {
+                            "from": "action with no or unhandled side effect",
+                            "fileInfo": "-"
+                        },
+                        "children": []
+                    }
+                ]
+            },
+            {
+                "name": "[api v] get project lead metrics",
+                "object": {
+                    "from": "evtProjectLeadMetricsSuccess",
+                    "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/metric/store/metric.effect.ts:153:2"
+                },
+                "children": [
+                    {
+                        "name": "[evt] get projectlead metrics",
+                        "object": {
+                            "from": "action with no or unhandled side effect",
+                            "fileInfo": "-"
+                        },
+                        "children": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "[api x] get project lead metrics",
+        "object": {
+            "from": "evtProjectLeadMetricsError",
+            "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/metric/store/metric.effect.ts:155:2"
+        },
+        "children": [
+            {
+                "name": "[evt] get projectlead metrics",
+                "object": {
+                    "from": "action with no or unhandled side effect",
+                    "fileInfo": "-"
+                },
+                "children": []
+            }
+        ]
+    },
+    {
+        "name": "Effects",
+        "children": [
+            {
+                "name": "[cmd] get budgetables",
+                "object": {
+                    "from": "cmdGetBudgetablesHandler",
+                    "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/budget/store/budget.effect.ts:55:2"
+                },
+                "children": [
+                    {
+                        "name": "[hand] get budgetables",
+                        "object": {
+                            "from": "getBudgetablesDecider",
+                            "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/budget/store/budget.effect.ts:58:2"
+                        },
+                        "children": []
+                    }
+                ]
+            },
+            {
+                "name": "[cmd] get budgetables",
+                "object": {
+                    "from": "cmdGetBudgetablesComplete",
+                    "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/budget/store/budget.effect.ts:135:2"
+                },
+                "children": []
+            }
+        ]
+    },
+    {
+        "name": "[hand] get budgetables",
+        "object": {
+            "from": "getBudgetablesDecider",
+            "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/budget/store/budget.effect.ts:58:2"
+        },
+        "children": []
+    },
+    {
+        "name": "[api] get projects budgets",
+        "object": {
+            "from": "getProjectsBudgetsApi",
+            "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/budget/store/budget.effect.ts:76:2"
+        },
+        "children": [
+            {
+                "name": "[api x] get projects budgets",
+                "object": {
+                    "from": "evtProjectsBudgetsError",
+                    "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/budget/store/budget.effect.ts:89:2"
+                },
+                "children": [
+                    {
+                        "name": "[evt] get budgetables",
+                        "object": {
+                            "from": "action with no or unhandled side effect",
+                            "fileInfo": "-"
+                        },
+                        "children": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Effects",
+        "children": [
+            {
+                "name": "[api v] get projects budgets",
+                "object": {
+                    "from": "dataProjectsBudgets",
+                    "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/budget/store/budget.effect.ts:83:2"
+                },
+                "children": [
+                    {
+                        "name": "[data] budgetables",
+                        "object": {
+                            "from": "action with no or unhandled side effect",
+                            "fileInfo": "-"
+                        },
+                        "children": []
+                    }
+                ]
+            },
+            {
+                "name": "[api v] get projects budgets",
+                "object": {
+                    "from": "evtProjectsBudgetsSuccess",
+                    "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/budget/store/budget.effect.ts:86:2"
+                },
+                "children": [
+                    {
+                        "name": "[evt] get budgetables",
+                        "object": {
+                            "from": "action with no or unhandled side effect",
+                            "fileInfo": "-"
+                        },
+                        "children": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "[api x] get projects budgets",
+        "object": {
+            "from": "evtProjectsBudgetsError",
+            "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/budget/store/budget.effect.ts:89:2"
+        },
+        "children": [
+            {
+                "name": "[evt] get budgetables",
+                "object": {
+                    "from": "action with no or unhandled side effect",
+                    "fileInfo": "-"
+                },
+                "children": []
+            }
+        ]
+    },
+    {
+        "name": "[api] get tasks budgets",
+        "object": {
+            "from": "getTasksBudgetsApi",
+            "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/budget/store/budget.effect.ts:96:2"
+        },
+        "children": [
+            {
+                "name": "[api x] get tasks budgets",
+                "object": {
+                    "from": "evtTasksBudgetsError",
+                    "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/budget/store/budget.effect.ts:109:2"
+                },
+                "children": [
+                    {
+                        "name": "[evt] get budgetables",
+                        "object": {
+                            "from": "action with no or unhandled side effect",
+                            "fileInfo": "-"
+                        },
+                        "children": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Effects",
+        "children": [
+            {
+                "name": "[api v] get tasks budgets",
+                "object": {
+                    "from": "dataTasksBudgets",
+                    "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/budget/store/budget.effect.ts:103:2"
+                },
+                "children": [
+                    {
+                        "name": "[data] budgetables",
+                        "object": {
+                            "from": "action with no or unhandled side effect",
+                            "fileInfo": "-"
+                        },
+                        "children": []
+                    }
+                ]
+            },
+            {
+                "name": "[api v] get tasks budgets",
+                "object": {
+                    "from": "evtTasksBudgetsSuccess",
+                    "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/budget/store/budget.effect.ts:106:2"
+                },
+                "children": [
+                    {
+                        "name": "[evt] get budgetables",
+                        "object": {
+                            "from": "action with no or unhandled side effect",
+                            "fileInfo": "-"
+                        },
+                        "children": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "[api x] get tasks budgets",
+        "object": {
+            "from": "evtTasksBudgetsError",
+            "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/budget/store/budget.effect.ts:109:2"
+        },
+        "children": [
+            {
+                "name": "[evt] get budgetables",
+                "object": {
+                    "from": "action with no or unhandled side effect",
+                    "fileInfo": "-"
+                },
+                "children": []
+            }
+        ]
+    },
+    {
+        "name": "[api] get team memberships budgets",
+        "object": {
+            "from": "getTeamMembershipsBudgetsApi",
+            "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/budget/store/budget.effect.ts:116:2"
+        },
+        "children": [
+            {
+                "name": "[api x] get team memberships budgets",
+                "object": {
+                    "from": "evtTeamMembershipsBudgetsError",
+                    "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/budget/store/budget.effect.ts:129:2"
+                },
+                "children": [
+                    {
+                        "name": "[evt] get budgetables",
+                        "object": {
+                            "from": "action with no or unhandled side effect",
+                            "fileInfo": "-"
+                        },
+                        "children": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Effects",
+        "children": [
+            {
+                "name": "[api v] get team memberships budgets",
+                "object": {
+                    "from": "dataTeamMembershipsBudgets",
+                    "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/budget/store/budget.effect.ts:123:2"
+                },
+                "children": [
+                    {
+                        "name": "[data] budgetables",
+                        "object": {
+                            "from": "action with no or unhandled side effect",
+                            "fileInfo": "-"
+                        },
+                        "children": []
+                    }
+                ]
+            },
+            {
+                "name": "[api v] get team memberships budgets",
+                "object": {
+                    "from": "evtTeamMembershipsBudgetsSuccess",
+                    "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/budget/store/budget.effect.ts:126:2"
+                },
+                "children": [
+                    {
+                        "name": "[evt] get budgetables",
+                        "object": {
+                            "from": "action with no or unhandled side effect",
+                            "fileInfo": "-"
+                        },
+                        "children": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "[api x] get team memberships budgets",
+        "object": {
+            "from": "evtTeamMembershipsBudgetsError",
+            "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/budget/store/budget.effect.ts:129:2"
+        },
+        "children": [
+            {
+                "name": "[evt] get budgetables",
+                "object": {
+                    "from": "action with no or unhandled side effect",
+                    "fileInfo": "-"
+                },
+                "children": []
+            }
+        ]
+    },
+    {
+        "name": "Effects",
+        "children": [
+            {
+                "name": "[cmd] save budgetables",
+                "object": {
+                    "from": "cmdSaveBudgetablesHandler",
+                    "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/budget/store/budget.effect.ts:151:2"
+                },
+                "children": [
+                    {
+                        "name": "[hand] save budgetables",
+                        "object": {
+                            "from": "saveBudgetablesDecider",
+                            "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/budget/store/budget.effect.ts:154:2"
+                        },
+                        "children": []
+                    }
+                ]
+            },
+            {
+                "name": "[cmd] save budgetables",
+                "object": {
+                    "from": "cmdSaveBudgetablesSuccess",
+                    "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/budget/store/budget.effect.ts:238:2"
+                },
+                "children": []
+            }
+        ]
+    },
+    {
+        "name": "[hand] save budgetables",
+        "object": {
+            "from": "saveBudgetablesDecider",
+            "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/budget/store/budget.effect.ts:154:2"
+        },
+        "children": []
+    },
+    {
+        "name": "[api] save project budgets",
+        "object": {
+            "from": "saveProjectsBudgetsApi",
+            "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/budget/store/budget.effect.ts:172:2"
+        },
+        "children": [
+            {
+                "name": "[api x] save project budgets",
+                "object": {
+                    "from": "evtSaveProjectsBudgetsError",
+                    "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/budget/store/budget.effect.ts:188:2"
+                },
+                "children": [
+                    {
+                        "name": "[evt] save budgetables",
+                        "object": {
+                            "from": "action with no or unhandled side effect",
+                            "fileInfo": "-"
+                        },
+                        "children": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Effects",
+        "children": [
+            {
+                "name": "[api v] save project budgets",
+                "object": {
+                    "from": "dataUpdateProjectsBudgets",
+                    "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/budget/store/budget.effect.ts:179:2"
+                },
+                "children": [
+                    {
+                        "name": "[data] update budgetables",
+                        "object": {
+                            "from": "action with no or unhandled side effect",
+                            "fileInfo": "-"
+                        },
+                        "children": []
+                    }
+                ]
+            },
+            {
+                "name": "[api v] save project budgets",
+                "object": {
+                    "from": "dataEnrichProjects",
+                    "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/budget/store/budget.effect.ts:181:2"
+                },
+                "children": [
+                    {
+                        "name": "[data] enrich projects",
+                        "object": {
+                            "from": "action with no or unhandled side effect",
+                            "fileInfo": "-"
+                        },
+                        "children": []
+                    }
+                ]
+            },
+            {
+                "name": "[api v] save project budgets",
+                "object": {
+                    "from": "evtSaveProjectsBudgetsSuccess",
+                    "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/budget/store/budget.effect.ts:185:2"
+                },
+                "children": [
+                    {
+                        "name": "[evt] save budgetables",
+                        "object": {
+                            "from": "action with no or unhandled side effect",
+                            "fileInfo": "-"
+                        },
+                        "children": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "[api x] save project budgets",
+        "object": {
+            "from": "evtSaveProjectsBudgetsError",
+            "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/budget/store/budget.effect.ts:188:2"
+        },
+        "children": [
+            {
+                "name": "[evt] save budgetables",
+                "object": {
+                    "from": "action with no or unhandled side effect",
+                    "fileInfo": "-"
+                },
+                "children": []
+            }
+        ]
+    },
+    {
+        "name": "[api] save tasks budgets",
+        "object": {
+            "from": "saveTasksBudgetsApi",
+            "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/budget/store/budget.effect.ts:195:2"
+        },
+        "children": [
+            {
+                "name": "[api x] save tasks budgets",
+                "object": {
+                    "from": "evtSaveTasksBudgetsError",
+                    "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/budget/store/budget.effect.ts:210:2"
+                },
+                "children": [
+                    {
+                        "name": "[evt] save budgetables",
+                        "object": {
+                            "from": "action with no or unhandled side effect",
+                            "fileInfo": "-"
+                        },
+                        "children": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Effects",
+        "children": [
+            {
+                "name": "[api v] save tasks budgets",
+                "object": {
+                    "from": "dataUpdateTasksBudgets",
+                    "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/budget/store/budget.effect.ts:202:2"
+                },
+                "children": [
+                    {
+                        "name": "[data] update budgetables",
+                        "object": {
+                            "from": "action with no or unhandled side effect",
+                            "fileInfo": "-"
+                        },
+                        "children": []
+                    }
+                ]
+            },
+            {
+                "name": "[api v] save tasks budgets",
+                "object": {
+                    "from": "evtSaveTasksBudgetsSuccess",
+                    "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/budget/store/budget.effect.ts:205:2"
+                },
+                "children": [
+                    {
+                        "name": "[evt] save budgetables",
+                        "object": {
+                            "from": "action with no or unhandled side effect",
+                            "fileInfo": "-"
+                        },
+                        "children": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "[api x] save tasks budgets",
+        "object": {
+            "from": "evtSaveTasksBudgetsError",
+            "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/budget/store/budget.effect.ts:210:2"
+        },
+        "children": [
+            {
+                "name": "[evt] save budgetables",
+                "object": {
+                    "from": "action with no or unhandled side effect",
+                    "fileInfo": "-"
+                },
+                "children": []
+            }
+        ]
+    },
+    {
+        "name": "[api] save team memberships budgets",
+        "object": {
+            "from": "saveTeamMembershipsBudgetsApi",
+            "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/budget/store/budget.effect.ts:217:2"
+        },
+        "children": [
+            {
+                "name": "[api x] save team memberships budgets",
+                "object": {
+                    "from": "evtSaveTeamMembershipsBudgetsError",
+                    "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/budget/store/budget.effect.ts:232:2"
+                },
+                "children": [
+                    {
+                        "name": "[evt] save budgetables",
+                        "object": {
+                            "from": "action with no or unhandled side effect",
+                            "fileInfo": "-"
+                        },
+                        "children": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Effects",
+        "children": [
+            {
+                "name": "[api v] save team memberships budgets",
+                "object": {
+                    "from": "dataUpdateTeamMembershipsBudgets",
+                    "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/budget/store/budget.effect.ts:224:2"
+                },
+                "children": [
+                    {
+                        "name": "[data] update budgetables",
+                        "object": {
+                            "from": "action with no or unhandled side effect",
+                            "fileInfo": "-"
+                        },
+                        "children": []
+                    }
+                ]
+            },
+            {
+                "name": "[api v] save team memberships budgets",
+                "object": {
+                    "from": "evtSaveTeamMembershipsBudgetsSuccess",
+                    "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/budget/store/budget.effect.ts:227:2"
+                },
+                "children": [
+                    {
+                        "name": "[evt] save budgetables",
+                        "object": {
+                            "from": "action with no or unhandled side effect",
+                            "fileInfo": "-"
+                        },
+                        "children": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "[api x] save team memberships budgets",
+        "object": {
+            "from": "evtSaveTeamMembershipsBudgetsError",
+            "fileInfo": "C:/Sites/lucca/static/timmi/packages/project/src/app/project/budget/store/budget.effect.ts:232:2"
+        },
+        "children": [
+            {
+                "name": "[evt] save budgetables",
+                "object": {
+                    "from": "action with no or unhandled side effect",
+                    "fileInfo": "-"
+                },
+                "children": []
+            }
+        ]
+    }
+]

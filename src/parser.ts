@@ -111,11 +111,3 @@ export function generateEffectsMapping(fileNames: string[]): Mapping[] {
     );
   }
 }
-
-const empty = ts.createNodeArray<any>();
-
-function arrayOrEmpty<T extends ts.Node>(
-  v: ts.NodeArray<T> | undefined
-): ts.NodeArray<T> {
-  return v || empty;
-}

@@ -1,4 +1,3 @@
-import * as console from 'console';
 import * as ts from 'typescript';
 
 export function evaluateExpression(
@@ -19,7 +18,6 @@ export function evaluateExpression(
     case ts.SyntaxKind.NewExpression:
       const newExpression = node as ts.NewExpression;
 
-      const classIdentifier = newExpression.expression as ts.Identifier;
       const type = checker.getTypeAtLocation(newExpression);
       const propertiesOfType = checker
         .getPropertiesOfType(type)
@@ -56,7 +54,6 @@ export function evaluateExpression(
       return argValues[indexOfType];
 
     case ts.SyntaxKind.Parameter:
-      const parameter = node as ts.ParameterDeclaration;
       return 'DECLARED_CONSTRUCT';
 
     case ts.SyntaxKind.PropertyDeclaration:

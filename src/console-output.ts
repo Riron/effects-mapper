@@ -1,6 +1,5 @@
-import { Output, getEffectsTrees } from './tree-maker';
+import { Output } from './tree-maker';
 import chalk from 'chalk';
-import { generateEffectsMapping } from './parser';
 
 const bulletPoints = ['-', '+', '•'];
 
