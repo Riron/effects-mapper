@@ -26,17 +26,31 @@ $ npm run console ./demo
 $ npm run console ./file1.ts ./file2.ts
 ```
 
-You can print the result either to the console or to the browser UI:
+You can print the result either to the console or to a JSON file. With the JSON file, you can then use the browser UI and visualize you effects as trees.
 
 ```bash
 # Use the console output
-$ npm run console
+$ npm run console ./demo
 
-# Use the browser output
+# Use the JSON output (for browser UI)
+$ npm run json ./demo
+```
+
+![Console output example](images/console-ui.png)
+
+## 🔮 Browser UI
+
+If you chose to generate a JSON file, you can visualize the result in the browser.
+
+```bash
+# Move the created "tree-xxxxx.json" file to the "./client" directory and rename it as "trees.json"
+$ mv tree-xxxxx.json ./client/trees.json
+
+# Open the browser UI
 $ npm run browser
 ```
 
-
+![Browser UI output example](images/browser-ui.png)
 
 ## 🔬 How does it work ?
 

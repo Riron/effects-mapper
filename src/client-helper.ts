@@ -1,6 +1,6 @@
 import { writeFileSync } from 'fs';
 import { Output } from './tree-maker';
-import { convertFilesToEffectTrees } from './';
+import { convertFilesToEffectTrees } from './orchestrator';
 
 getEffectTreesAndWriteThemInFile()
 	.then(_ => console.log('Trees written in JSON file'))

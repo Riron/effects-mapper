@@ -1,3 +1,4 @@
+import { writeFileSync } from 'fs';
 import { Mapping } from './parser';
 
 export interface Output {
@@ -13,13 +14,32 @@ function getActionMap(actionName: string, mappings: Mapping[]): Mapping[] {
   );
 
   if (effects.length == 0) {
-    return [{ name: 'action with no or unhandled side effect', inputTypes: [], returnType: [], fileInfo: '-'}];
+    return [
+      {
+        name: 'action with no or unhandled side effect',
+        inputTypes: [],
+        returnType: [],
+        fileInfo: '-'
+      }
+    ];
   }
 
   return effects;
 }
 
-export function getEffectTree(actionName: string, mappings: Mapping[]): Output[] {
+export function printEffectsTrees(mappings: Mapping[]): string {
+  const output = getEffectsTrees(mappings);
+  const fileName = `tree-${Math.floor(Date.now() / 1000)}.json`;
+  // print out the doc
+  writeFileSync(fileName, JSON.stringify(output, undefined, 4));
+
+  return fileName;
+}
+
+export function getEffectTree(
+  actionName: string,
+  mappings: Mapping[]
+): Output[] {
   const effects = getActionMap(actionName, mappings);
 
   return effects.map(effect => {

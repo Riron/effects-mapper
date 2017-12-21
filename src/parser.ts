@@ -1,5 +1,4 @@
 import * as ts from 'typescript';
-import { writeFileSync } from 'fs';
 import { evaluateExpression, evaluateDecoratorNode, evaluateOfType } from './evaluator';
 
 interface DecoratorEvaluation {
@@ -12,12 +11,6 @@ export interface Mapping {
   inputTypes: string[];
   returnType: string[];
   fileInfo: string;
-}
-
-export function printEffectsMapping(fileNames: string[]): void {
-  const output = generateEffectsMapping(fileNames);
-  // print out the doc
-  writeFileSync('mapping.json', JSON.stringify(output, undefined, 4));
 }
 
 export function generateEffectsMapping(fileNames: string[]): Mapping[] {

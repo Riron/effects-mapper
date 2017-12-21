@@ -5,7 +5,8 @@
   "main": "parser.js",
   "scripts": {
     "build": "./node_modules/.bin/tsc",
-    "console": "node dist/index.js",
+    "console": "node dist/console-index.js",
+    "json": "node dist/json-index.js",
     "browser": "cd client && npm start",
     "pretest": "./node_modules/.bin/tsc tests/evaluator.test.ts --module commonjs --outDir ./tests/dist",
     "test": "./node_modules/.bin/mocha ./tests/dist/**/*.test.js",

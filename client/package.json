@@ -4,7 +4,8 @@
   "description": "Visualize your effects as a tree",
   "main": "server.js",
   "scripts": {
-    "start": "webpack-dev-server --config webpack.config.js --open"
+    "build": "./node_modules/.bin/webpack",
+    "start": "webpack-dev-server --open"
   },
   "repository": {
     "type": "git",
