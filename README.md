@@ -10,7 +10,6 @@ To install this application, you'll need
 [npm](http://npmjs.com)) installed on your computer. You'll also need [Git](https://git-scm.com) to run the project from source:
 
 ```bash
-
 # Clone this repository
 $ git clone https://github.com/Riron/effects-mapper
 
@@ -26,7 +25,7 @@ $ npm run console ./demo
 $ npm run console ./file1.ts ./file2.ts
 ```
 
-You can print the result either to the console or to a JSON file. With the JSON file, you can then use the browser UI and visualize you effects as trees.
+You can print the result either to the console or to a JSON file. With the JSON file, you can then use the browser UI (see below) and visualize you effects as trees.
 
 ```bash
 # Use the console output
@@ -40,7 +39,7 @@ $ npm run json ./demo
 
 ## 🔮 Browser UI
 
-If you chose to generate a JSON file, you can visualize the result in the browser.
+If you chose to generate a JSON file, you can then visualize the result in the browser.
 
 ```bash
 # Move the created "tree-xxxxx.json" file to the "./client" directory and rename it as "trees.json"
@@ -55,7 +54,7 @@ $ npm run browser
 ## 🔬 How does it work ?
 
 This tool statically analyze your code. It uses the Typescript compiler
-to grab all properties decorated with the `@Effect()` decorator and then perform its work on it's `ofType()` and return call.
+to grab all properties decorated with the `@Effect()` decorator and then perform its magic on the `ofType()` call for the input, and the returning call for the output.
 
 ## 💣 Edges cases
 
