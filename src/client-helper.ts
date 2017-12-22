@@ -12,7 +12,7 @@ async function getEffectTreesAndWriteThemInFile() {
   const treesToWrite = effectTrees.map(tree => {
     if (tree.length > 1) {
       return {
-        name: `${tree[0].actionName}`,
+        name: `${tree[0].name}`,
         children: tree.map(t => outputToMap2Tree(t))
       };
     }
@@ -32,10 +32,10 @@ function outputToMap2Tree(output: Output): any {
   }
 
   return {
-    name: output.actionName,
+    name: output.name,
     object: {
-      from: output.from,
-      fileInfo: output.fileInfo
+      from: output.object.from,
+      fileInfo: output.object.fileInfo
     },
     children: output.children.map(o => outputToMap2Tree(o))
   };

@@ -2,10 +2,14 @@ import { writeFileSync } from 'fs';
 import { Mapping } from './parser';
 
 export interface Output {
-  actionName: string;
+  name: string;
+  object: OutputParams;
+  children: Output[];
+}
+
+interface OutputParams {
   from: string;
   fileInfo: string;
-  children: Output[];
 }
 
 function getActionMap(actionName: string, mappings: Mapping[]): Mapping[] {
@@ -36,17 +40,16 @@ export function printEffectsTrees(mappings: Mapping[]): string {
   return fileName;
 }
 
-export function getEffectTree(
-  actionName: string,
-  mappings: Mapping[]
-): Output[] {
-  const effects = getActionMap(actionName, mappings);
+export function getEffectTree(name: string, mappings: Mapping[]): Output[] {
+  const effects = getActionMap(name, mappings);
 
   return effects.map(effect => {
     return {
-      actionName,
-      from: effect.name,
-      fileInfo: effect.fileInfo,
+      name,
+      object: {
+        from: effect.name,
+        fileInfo: effect.fileInfo
+      },
       children: effect.returnType
         .map(action => getEffectTree(action, mappings))
         .reduce((a, b) => a.concat(b), [])
